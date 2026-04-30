@@ -1,0 +1,5 @@
+mechanism,abstention_rate,accuracy_when_not_abstaining,accuracy_when_abstaining,avg_confidence_correct,avg_confidence_incorrect,confidence_calibration_error
+ConflictFirst_traj,0.0000,0.4519,nan,0.9000,0.3177,0.5823
+ConflictFirst_feat_low_traj,0.0000,0.7404,nan,0.8221,0.3375,0.4846
+ConflictFirst_abstain,0.1250,0.5165,0.0000,0.9000,0.5664,0.3336
+ConflictFirst_margin,0.0192,0.5294,0.0000,0.8741,0.2372,0.6369

@@ -1,0 +1,4 @@
+model,beta,clean_skill,assignment_accuracy,identity_swap_only,identity_overall
+FeatureOnly,N/A,0.6691,1.0000,1.0000,1.0000
+Hybrid_b1.0,1.0,0.6911,0.9904,0.9904,0.9904
+Hybrid_b2.0,2.0,0.6852,1.0000,1.0000,1.0000

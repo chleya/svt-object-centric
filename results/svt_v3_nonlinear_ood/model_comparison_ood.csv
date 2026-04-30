@@ -1,0 +1,5 @@
+seed,model,train_force_type,test_force_type,clean_skill,ood_skill,ood_skill_drop,ood_identity_swap_only,ood_gated_score
+0,LastVelocityBaseline,attractor,vortex,0.6532,-8.1762,8.8293,0.0357,0.0000
+0,RawTrajectoryKNN,attractor,vortex,0.6420,0.4693,0.1728,0.2500,0.0000
+0,RawDeltaKNN,attractor,vortex,0.8568,0.6981,0.1587,0.0357,0.0000
+0,TranslationNormalizedKNN,attractor,vortex,0.6669,0.5774,0.0896,0.2500,0.0000

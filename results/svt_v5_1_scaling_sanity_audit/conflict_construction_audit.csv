@@ -1,0 +1,2 @@
+conflict_rate,feature_matches_true,trajectory_matches_true,feat_vs_traj_disagreement,feat_correct_when_disagree,traj_correct_when_disagree,n_episodes,n_disagree
+0.8889,0.0000,0.5463,0.8889,0.0000,0.6146,108,96

@@ -1,0 +1,9 @@
+swap_ratio,model,clean_skill,cf_skill,comp_skill,identity_overall,identity_swap_only,gated_score_overall_id,gated_score_swap_only,score_drop,no_swap_bias_flag
+0.0,MLPPositionFeature,0.6872,0.6367,0.5455,0.7642,0.0000,0.1824,0.0000,0.1824,True
+0.0,ObjectCentricFeatureModel,0.5040,0.4169,0.2268,0.7642,0.0000,0.0364,0.0000,0.0364,True
+0.1,MLPPositionFeature,0.7768,0.7057,0.7285,0.8679,0.4400,0.3466,0.1757,0.1709,True
+0.1,ObjectCentricFeatureModel,0.7609,0.7010,0.6786,0.9151,0.6400,0.3313,0.2317,0.0996,True
+0.3,MLPPositionFeature,0.7820,0.6992,0.7370,0.8585,0.4000,0.3459,0.1612,0.1847,True
+0.3,ObjectCentricFeatureModel,0.7666,0.6946,0.6805,0.9151,0.8400,0.3316,0.3044,0.0272,False
+0.5,MLPPositionFeature,0.7796,0.7225,0.7346,0.8774,0.4800,0.3631,0.1986,0.1644,True
+0.5,ObjectCentricFeatureModel,0.7592,0.7234,0.6796,0.9245,0.8000,0.3451,0.2986,0.0465,True

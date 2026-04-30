@@ -1,0 +1,3 @@
+model,normal_identity_swap_only,shuffled_identity_swap_only,zero_identity_swap_only,wrong_identity_swap_only,normal_assignment_accuracy,shuffled_assignment_accuracy,zero_assignment_accuracy,wrong_assignment_accuracy,feature_dependency_score_swap,feature_dependency_score_asgn,feature_depends_on_features
+MLPPositionFeatureAssignment,0.2115,0.2115,0.3077,0.2404,0.2115,0.2115,0.3077,0.2404,-0.0962,-0.0962,False
+ObjectCentricFeatureAssignment,0.7596,0.7596,0.6923,0.7500,0.7596,0.7596,0.6923,0.7500,0.0000,0.0000,False

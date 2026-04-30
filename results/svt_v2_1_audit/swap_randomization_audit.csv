@@ -1,0 +1,9 @@
+seed,setting,model,clean_skill,identity_accuracy,gated_svt_score,swap_time_variance,occlusion_center_variance
+0,fixed_swap_occlusion,RawTrajectoryKNN,0.3463,0.7650,0.0000,0.0000,0.0000
+0,fixed_swap_occlusion,RawDeltaKNN,0.4417,0.5550,0.0000,0.0000,0.0000
+0,fixed_swap_occlusion,TranslationNormalizedKNN,0.2224,0.7900,0.0000,0.0000,0.0000
+0,fixed_swap_occlusion,LastVelocityBaseline,-100.6713,0.4700,0.0000,0.0000,0.0000
+0,randomized_swap_occlusion,RawTrajectoryKNN,0.3526,0.7450,0.0000,0.0000,0.0000
+0,randomized_swap_occlusion,RawDeltaKNN,0.4402,0.5300,0.0000,0.0000,0.0000
+0,randomized_swap_occlusion,TranslationNormalizedKNN,0.2271,0.8050,0.0000,0.0000,0.0000
+0,randomized_swap_occlusion,LastVelocityBaseline,-111.6543,0.5050,0.0000,0.0000,0.0000

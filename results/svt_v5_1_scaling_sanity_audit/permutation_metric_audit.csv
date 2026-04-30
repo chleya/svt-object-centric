@@ -1,0 +1,5 @@
+permutation,perfect_accuracy,random_accuracy,fixed_identity_accuracy,is_swap_detected,bd_swap_only,bd_overall
+identity,1.0000,0.0350,1.0000,False,nan,1.0000
+swap01,1.0000,0.0250,0.0000,True,1.0000,1.0000
+cycle,1.0000,0.0150,0.0000,True,1.0000,1.0000
+reverse,1.0000,0.0400,0.0000,True,1.0000,1.0000

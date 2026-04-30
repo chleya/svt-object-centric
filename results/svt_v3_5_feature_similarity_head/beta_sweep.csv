@@ -1,0 +1,6 @@
+beta,model,clean_skill,assignment_accuracy,identity_swap_only,identity_overall
+0.0,HybridTrajectoryFeatureAssignmentHead,0.6902,0.6346,0.6346,0.6346
+0.5,HybridTrajectoryFeatureAssignmentHead,0.6706,0.5962,0.5962,0.5962
+1.0,HybridTrajectoryFeatureAssignmentHead,0.6666,0.9519,0.9519,0.9519
+2.0,HybridTrajectoryFeatureAssignmentHead,0.6828,0.9808,0.9808,0.9808
+5.0,HybridTrajectoryFeatureAssignmentHead,0.6854,1.0000,1.0000,1.0000

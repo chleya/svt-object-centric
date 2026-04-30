@@ -1,0 +1,7 @@
+mechanism,identity_swap_only,identity_overall,feature_dependency_score,trajectory_dependency_score,no_swap_bias_gap,confidence_calibration
+FeatureOnly,1.0000,1.0000,0.4904,0.0000,nan,nan
+TrajectoryOnly,0.1346,0.1346,0.0000,0.1346,nan,nan
+Hybrid_b1.0,1.0000,1.0000,0.4904,0.3077,nan,nan
+Hybrid_b2.0,1.0000,1.0000,0.4904,0.2115,nan,nan
+ObjectFile,0.0962,0.0962,0.0192,0.0962,nan,nan
+ObjFileLearned,0.4519,0.4519,0.0385,0.3942,nan,nan

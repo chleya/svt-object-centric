@@ -1,0 +1,242 @@
+[
+  {
+    "model": "SlotAttention",
+    "method": "slot",
+    "num_objects": 2,
+    "feature_dim": 2,
+    "seed": 0,
+    "swap_only": "0.1809",
+    "overall": "0.1789",
+    "conflict_a": "0.3238"
+  },
+  {
+    "model": "SlotAttention",
+    "method": "feature",
+    "num_objects": 2,
+    "feature_dim": 2,
+    "seed": 0,
+    "swap_only": "0.0000",
+    "overall": "0.0000",
+    "conflict_a": "0.0000"
+  },
+  {
+    "model": "DINOSAUR",
+    "method": "slot",
+    "num_objects": 2,
+    "feature_dim": 2,
+    "seed": 0,
+    "swap_only": "0.1596",
+    "overall": "0.1579",
+    "conflict_a": "0.3905"
+  },
+  {
+    "model": "DINOSAUR",
+    "method": "feature",
+    "num_objects": 2,
+    "feature_dim": 2,
+    "seed": 0,
+    "swap_only": "1.0000",
+    "overall": "1.0000",
+    "conflict_a": "0.0000"
+  },
+  {
+    "model": "SlotAttention",
+    "method": "slot",
+    "num_objects": 2,
+    "feature_dim": 2,
+    "seed": 42,
+    "swap_only": "0.1429",
+    "overall": "0.1429",
+    "conflict_a": "0.3367"
+  },
+  {
+    "model": "SlotAttention",
+    "method": "feature",
+    "num_objects": 2,
+    "feature_dim": 2,
+    "seed": 42,
+    "swap_only": "0.0000",
+    "overall": "0.0000",
+    "conflict_a": "0.0000"
+  },
+  {
+    "model": "DINOSAUR",
+    "method": "slot",
+    "num_objects": 2,
+    "feature_dim": 2,
+    "seed": 42,
+    "swap_only": "0.1429",
+    "overall": "0.1429",
+    "conflict_a": "0.1735"
+  },
+  {
+    "model": "DINOSAUR",
+    "method": "feature",
+    "num_objects": 2,
+    "feature_dim": 2,
+    "seed": 42,
+    "swap_only": "1.0000",
+    "overall": "1.0000",
+    "conflict_a": "0.0000"
+  },
+  {
+    "model": "SlotAttention",
+    "method": "slot",
+    "num_objects": 2,
+    "feature_dim": 2,
+    "seed": 123,
+    "swap_only": "0.1143",
+    "overall": "0.1143",
+    "conflict_a": "0.1053"
+  },
+  {
+    "model": "SlotAttention",
+    "method": "feature",
+    "num_objects": 2,
+    "feature_dim": 2,
+    "seed": 123,
+    "swap_only": "0.0000",
+    "overall": "0.0000",
+    "conflict_a": "0.0000"
+  },
+  {
+    "model": "DINOSAUR",
+    "method": "slot",
+    "num_objects": 2,
+    "feature_dim": 2,
+    "seed": 123,
+    "swap_only": "0.0667",
+    "overall": "0.0667",
+    "conflict_a": "0.1404"
+  },
+  {
+    "model": "DINOSAUR",
+    "method": "feature",
+    "num_objects": 2,
+    "feature_dim": 2,
+    "seed": 123,
+    "swap_only": "1.0000",
+    "overall": "1.0000",
+    "conflict_a": "0.0000"
+  },
+  {
+    "model": "SlotAttention",
+    "method": "slot",
+    "num_objects": 3,
+    "feature_dim": 16,
+    "seed": 0,
+    "swap_only": "0.0167",
+    "overall": "0.0097",
+    "conflict_a": "0.0093"
+  },
+  {
+    "model": "SlotAttention",
+    "method": "feature",
+    "num_objects": 3,
+    "feature_dim": 16,
+    "seed": 0,
+    "swap_only": "0.0000",
+    "overall": "0.0000",
+    "conflict_a": "0.0000"
+  },
+  {
+    "model": "DINOSAUR",
+    "method": "slot",
+    "num_objects": 3,
+    "feature_dim": 16,
+    "seed": 0,
+    "swap_only": "0.0167",
+    "overall": "0.0194",
+    "conflict_a": "0.0278"
+  },
+  {
+    "model": "DINOSAUR",
+    "method": "feature",
+    "num_objects": 3,
+    "feature_dim": 16,
+    "seed": 0,
+    "swap_only": "1.0000",
+    "overall": "1.0000",
+    "conflict_a": "0.0000"
+  },
+  {
+    "model": "SlotAttention",
+    "method": "slot",
+    "num_objects": 3,
+    "feature_dim": 16,
+    "seed": 42,
+    "swap_only": "0.0133",
+    "overall": "0.0095",
+    "conflict_a": "0.0200"
+  },
+  {
+    "model": "SlotAttention",
+    "method": "feature",
+    "num_objects": 3,
+    "feature_dim": 16,
+    "seed": 42,
+    "swap_only": "0.0000",
+    "overall": "0.0000",
+    "conflict_a": "0.0000"
+  },
+  {
+    "model": "DINOSAUR",
+    "method": "slot",
+    "num_objects": 3,
+    "feature_dim": 16,
+    "seed": 42,
+    "swap_only": "0.0000",
+    "overall": "0.0000",
+    "conflict_a": "0.0100"
+  },
+  {
+    "model": "DINOSAUR",
+    "method": "feature",
+    "num_objects": 3,
+    "feature_dim": 16,
+    "seed": 42,
+    "swap_only": "1.0000",
+    "overall": "1.0000",
+    "conflict_a": "0.0000"
+  },
+  {
+    "model": "SlotAttention",
+    "method": "slot",
+    "num_objects": 3,
+    "feature_dim": 16,
+    "seed": 123,
+    "swap_only": "0.0000",
+    "overall": "0.0000",
+    "conflict_a": "0.0098"
+  },
+  {
+    "model": "SlotAttention",
+    "method": "feature",
+    "num_objects": 3,
+    "feature_dim": 16,
+    "seed": 123,
+    "swap_only": "0.0000",
+    "overall": "0.0000",
+    "conflict_a": "0.0000"
+  },
+  {
+    "model": "DINOSAUR",
+    "method": "slot",
+    "num_objects": 3,
+    "feature_dim": 16,
+    "seed": 123,
+    "swap_only": "0.0169",
+    "overall": "0.0291",
+    "conflict_a": "0.0000"
+  },
+  {
+    "model": "DINOSAUR",
+    "method": "feature",
+    "num_objects": 3,
+    "feature_dim": 16,
+    "seed": 123,
+    "swap_only": "1.0000",
+    "overall": "1.0000",
+    "conflict_a": "0.0000"
+  }
+]

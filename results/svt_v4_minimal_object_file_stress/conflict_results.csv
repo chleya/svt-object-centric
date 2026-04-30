@@ -1,0 +1,7 @@
+mechanism,conflict_type,identity_under_conflict,conflict_resolution_rate_feature_correct,conflict_resolution_rate_trajectory_correct
+FeatureOnly,feature_wrong_trajectory_correct,0.0000,1.0000,0.0000
+TrajectoryOnly,feature_wrong_trajectory_correct,0.9429,0.0571,0.9429
+Hybrid_b1.0,feature_wrong_trajectory_correct,0.0000,0.9524,0.0476
+Hybrid_b2.0,feature_wrong_trajectory_correct,0.0571,0.9429,0.0571
+ObjectFile,feature_wrong_trajectory_correct,0.9333,0.0667,0.9333
+ObjFileLearned,feature_wrong_trajectory_correct,0.7524,0.2476,0.7524

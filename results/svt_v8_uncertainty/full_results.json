@@ -1,0 +1,194 @@
+[
+  {
+    "mechanism": "CFObjectFile_rule",
+    "num_objects": 2,
+    "feature_dim": 2,
+    "seed": 0,
+    "swap_only": "0.5426",
+    "overall": "0.5474",
+    "no_swap": "1.0000",
+    "abstain_rate": "0.0105"
+  },
+  {
+    "mechanism": "UAObjectFile_lower_uncertainty",
+    "num_objects": 2,
+    "feature_dim": 2,
+    "seed": 0,
+    "swap_only": "1.0000",
+    "overall": "1.0000",
+    "no_swap": "1.0000",
+    "abstain_rate": "0.0000",
+    "conflict_a": "0.0000"
+  },
+  {
+    "mechanism": "UAObjectFile_epistemic_gated",
+    "num_objects": 2,
+    "feature_dim": 2,
+    "seed": 0,
+    "swap_only": "0.3830",
+    "overall": "0.3895",
+    "no_swap": "1.0000",
+    "abstain_rate": "0.0000",
+    "conflict_a": "0.9238"
+  },
+  {
+    "mechanism": "CFObjectFile_rule",
+    "num_objects": 2,
+    "feature_dim": 2,
+    "seed": 42,
+    "swap_only": "0.5275",
+    "overall": "0.5275",
+    "no_swap": "nan",
+    "abstain_rate": "0.0220"
+  },
+  {
+    "mechanism": "UAObjectFile_lower_uncertainty",
+    "num_objects": 2,
+    "feature_dim": 2,
+    "seed": 42,
+    "swap_only": "1.0000",
+    "overall": "1.0000",
+    "no_swap": "nan",
+    "abstain_rate": "0.0000",
+    "conflict_a": "0.0000"
+  },
+  {
+    "mechanism": "UAObjectFile_epistemic_gated",
+    "num_objects": 2,
+    "feature_dim": 2,
+    "seed": 42,
+    "swap_only": "0.7253",
+    "overall": "0.7253",
+    "no_swap": "nan",
+    "abstain_rate": "0.0000",
+    "conflict_a": "0.8265"
+  },
+  {
+    "mechanism": "CFObjectFile_rule",
+    "num_objects": 2,
+    "feature_dim": 2,
+    "seed": 123,
+    "swap_only": "0.5619",
+    "overall": "0.5619",
+    "no_swap": "nan",
+    "abstain_rate": "0.0286"
+  },
+  {
+    "mechanism": "UAObjectFile_lower_uncertainty",
+    "num_objects": 2,
+    "feature_dim": 2,
+    "seed": 123,
+    "swap_only": "1.0000",
+    "overall": "1.0000",
+    "no_swap": "nan",
+    "abstain_rate": "0.0000",
+    "conflict_a": "0.0000"
+  },
+  {
+    "mechanism": "UAObjectFile_epistemic_gated",
+    "num_objects": 2,
+    "feature_dim": 2,
+    "seed": 123,
+    "swap_only": "0.6476",
+    "overall": "0.6476",
+    "no_swap": "nan",
+    "abstain_rate": "0.0000",
+    "conflict_a": "0.8684"
+  },
+  {
+    "mechanism": "CFObjectFile_rule",
+    "num_objects": 3,
+    "feature_dim": 16,
+    "seed": 0,
+    "swap_only": "0.6667",
+    "overall": "0.5922",
+    "no_swap": "0.4884",
+    "abstain_rate": "0.0485"
+  },
+  {
+    "mechanism": "UAObjectFile_lower_uncertainty",
+    "num_objects": 3,
+    "feature_dim": 16,
+    "seed": 0,
+    "swap_only": "0.0667",
+    "overall": "0.0777",
+    "no_swap": "0.0930",
+    "abstain_rate": "0.0000",
+    "conflict_a": "0.9630"
+  },
+  {
+    "mechanism": "UAObjectFile_epistemic_gated",
+    "num_objects": 3,
+    "feature_dim": 16,
+    "seed": 0,
+    "swap_only": "0.0667",
+    "overall": "0.0777",
+    "no_swap": "0.0930",
+    "abstain_rate": "0.3398",
+    "conflict_a": "0.9630"
+  },
+  {
+    "mechanism": "CFObjectFile_rule",
+    "num_objects": 3,
+    "feature_dim": 16,
+    "seed": 42,
+    "swap_only": "0.6000",
+    "overall": "0.5714",
+    "no_swap": "0.5000",
+    "abstain_rate": "0.0286"
+  },
+  {
+    "mechanism": "UAObjectFile_lower_uncertainty",
+    "num_objects": 3,
+    "feature_dim": 16,
+    "seed": 42,
+    "swap_only": "0.0667",
+    "overall": "0.0571",
+    "no_swap": "0.0333",
+    "abstain_rate": "0.0000",
+    "conflict_a": "0.9400"
+  },
+  {
+    "mechanism": "UAObjectFile_epistemic_gated",
+    "num_objects": 3,
+    "feature_dim": 16,
+    "seed": 42,
+    "swap_only": "0.0667",
+    "overall": "0.0571",
+    "no_swap": "0.0333",
+    "abstain_rate": "0.3905",
+    "conflict_a": "0.9400"
+  },
+  {
+    "mechanism": "CFObjectFile_rule",
+    "num_objects": 3,
+    "feature_dim": 16,
+    "seed": 123,
+    "swap_only": "0.4915",
+    "overall": "0.6019",
+    "no_swap": "0.7500",
+    "abstain_rate": "0.0291"
+  },
+  {
+    "mechanism": "UAObjectFile_lower_uncertainty",
+    "num_objects": 3,
+    "feature_dim": 16,
+    "seed": 123,
+    "swap_only": "0.0678",
+    "overall": "0.0874",
+    "no_swap": "0.1136",
+    "abstain_rate": "0.0000",
+    "conflict_a": "0.9608"
+  },
+  {
+    "mechanism": "UAObjectFile_epistemic_gated",
+    "num_objects": 3,
+    "feature_dim": 16,
+    "seed": 123,
+    "swap_only": "0.0678",
+    "overall": "0.0874",
+    "no_swap": "0.1136",
+    "abstain_rate": "0.3883",
+    "conflict_a": "0.9608"
+  }
+]

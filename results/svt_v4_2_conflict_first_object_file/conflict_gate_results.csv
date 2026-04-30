@@ -1,0 +1,10 @@
+mechanism,conflict_type,identity_under_conflict,conflict_resolution_rate_trajectory_correct,conflict_resolution_rate_feature_correct,chosen_source_feature_rate,chosen_source_trajectory_rate,chosen_source_uncertain_rate,abstention_rate,accuracy_when_not_abstaining,conflict_detection_accuracy
+FeatureOnly,feature_wrong_trajectory_correct,0.0000,0.0000,1.0000,nan,nan,nan,0.0000,0.0000,nan
+TrajectoryOnly,feature_wrong_trajectory_correct,0.9429,0.9429,0.0571,nan,nan,nan,0.0000,0.9429,nan
+Hybrid_b1.0,feature_wrong_trajectory_correct,0.0286,0.0381,0.9619,nan,nan,nan,0.0000,0.0286,nan
+ObjectFile_v4,feature_wrong_trajectory_correct,0.9333,0.9333,0.0667,nan,nan,nan,0.0000,0.9333,nan
+ImprovedObjectFile_v4.1,feature_wrong_trajectory_correct,0.6000,0.6000,0.4000,1.0000,0.0000,0.0000,0.0000,0.6000,1.0000
+ConflictFirst_traj,feature_wrong_trajectory_correct,0.7619,0.7619,0.2381,0.0000,0.7619,0.0000,0.0000,0.7619,0.7619
+ConflictFirst_feat_low_traj,feature_wrong_trajectory_correct,0.3714,0.3714,0.6286,0.3905,0.3714,0.0000,0.0000,0.3714,0.7619
+ConflictFirst_abstain,feature_wrong_trajectory_correct,0.7619,0.7619,0.2381,0.0000,0.6095,0.1524,0.1524,0.7191,0.7619
+ConflictFirst_margin,feature_wrong_trajectory_correct,0.6476,0.6476,0.3524,0.1143,0.6381,0.0095,0.0095,0.6442,0.7619

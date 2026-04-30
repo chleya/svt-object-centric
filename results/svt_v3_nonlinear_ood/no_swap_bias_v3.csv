@@ -1,0 +1,7 @@
+seed,model,feature_mode,identity_overall,identity_swap_only,gap,flag
+0,LastVelocityBaseline,feature_bearing,0.7736,0.0400,0.7336,True
+0,RawTrajectoryKNN,feature_bearing,0.8679,0.6000,0.2679,True
+0,RawDeltaKNN,feature_bearing,0.8019,0.2000,0.6019,True
+0,TranslationNormalizedKNN,feature_bearing,0.8396,0.4000,0.4396,True
+0,FeatureAwareIdentityBaseline,feature_bearing,1.0000,1.0000,0.0000,False
+0,RandomIdentityBaseline,feature_bearing,0.5189,0.6000,-0.0811,False

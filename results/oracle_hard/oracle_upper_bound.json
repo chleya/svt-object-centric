@@ -1,0 +1,30 @@
+{
+  "clean_test": {
+    "mse": 10.262914874474996,
+    "mean_predictor_mse": 212.6385939440148,
+    "skill_score": 0.9517354084970243,
+    "normalized_mse": 0.0482645915029757,
+    "identity_accuracy": 1.0
+  },
+  "counterfactual_test": {
+    "mse": 579.7870533346203,
+    "mean_predictor_mse": 520.2854438709942,
+    "skill_score": -0.11436339448769894,
+    "normalized_mse": 1.114363394487699,
+    "identity_accuracy": 1.0
+  },
+  "compositional_test": {
+    "mse": 9.445657982795304,
+    "mean_predictor_mse": 211.38380255477242,
+    "skill_score": 0.9553151288384653,
+    "normalized_mse": 0.04468487116153474,
+    "identity_accuracy": 1.0
+  },
+  "identity_test": {
+    "mse": 74.4370194917826,
+    "mean_predictor_mse": 231.3307003846689,
+    "skill_score": 0.6782224781751631,
+    "normalized_mse": 0.32177752182483693,
+    "identity_accuracy": 1.0
+  }
+}

@@ -1,0 +1,7 @@
+feature_mode,model,swap_ratio,clean_skill,identity_swap_only,identity_overall_mixed,no_swap_bias_gap,ood_skill
+normal,MLPPositionFeature,0.3,0.6955,0.4038,0.8396,0.5196,0.7129
+normal,ObjectCentricFeatureModel,0.3,0.5525,0.5288,0.8491,0.4891,0.7042
+shuffled,MLPPositionFeature,0.3,0.6925,0.4712,0.8679,0.4279,0.7046
+shuffled,ObjectCentricFeatureModel,0.3,0.5908,0.9808,0.9340,0.0540,0.7130
+zero,MLPPositionFeature,0.3,0.6667,0.3558,0.8491,0.4891,0.6916
+zero,ObjectCentricFeatureModel,0.3,0.5383,0.7596,0.9057,0.3057,0.7016

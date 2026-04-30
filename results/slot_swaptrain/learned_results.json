@@ -1,0 +1,58 @@
+{
+  "slot_persistence": {
+    "clean": {
+      "mse": 29.853193620733435,
+      "mean_predictor_mse": 212.6385939440148,
+      "skill_score": 0.8596059489154004,
+      "normalized_mse": 0.14039405108459957,
+      "traj_identity_accuracy": 0.995,
+      "vel_identity_accuracy": 0.97,
+      "model_identity_accuracy": 0.0
+    },
+    "counterfactual": {
+      "mse": 442.58379661068795,
+      "mean_predictor_mse": 520.2854438709942,
+      "skill_score": 0.14934426510608378,
+      "normalized_mse": 0.8506557348939162,
+      "traj_identity_accuracy": 0.91,
+      "vel_identity_accuracy": 0.89,
+      "model_identity_accuracy": 0.0
+    },
+    "compositional": {
+      "mse": 30.137033679315863,
+      "mean_predictor_mse": 211.38380255477242,
+      "skill_score": 0.8574297873579649,
+      "normalized_mse": 0.1425702126420351,
+      "traj_identity_accuracy": 1.0,
+      "vel_identity_accuracy": 0.97,
+      "model_identity_accuracy": 0.0
+    },
+    "identity": {
+      "mse": 495.13577954851286,
+      "mean_predictor_mse": 231.3307003846689,
+      "skill_score": -1.1403807567485638,
+      "normalized_mse": 2.1403807567485638,
+      "traj_identity_accuracy": 0.505,
+      "vel_identity_accuracy": 0.63,
+      "model_identity_accuracy": 0.5
+    },
+    "gated_traj": {
+      "clean_skill": 0.8596059489154004,
+      "cf_skill": 0.14934426510608378,
+      "comp_skill": 0.8574297873579649,
+      "identity_accuracy": 0.505,
+      "gated_svt_score": 0.05558759793177949,
+      "gate_passed": true
+    },
+    "old_smss_traj": 0.0,
+    "gated_vel": {
+      "clean_skill": 0.8596059489154004,
+      "cf_skill": 0.14934426510608378,
+      "comp_skill": 0.8574297873579649,
+      "identity_accuracy": 0.63,
+      "gated_svt_score": 0.06934690435053678,
+      "gate_passed": true
+    },
+    "old_smss_vel": 0.0
+  }
+}

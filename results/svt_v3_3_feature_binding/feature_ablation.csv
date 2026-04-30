@@ -1,0 +1,9 @@
+model,feature_mode,swap_ratio,assignment_accuracy,identity_swap_only,identity_overall,clean_skill
+MLPPositionFeatureAssignment,normal,0.3,0.2115,0.2115,0.2115,0.6927
+MLPPositionFeatureAssignment,shuffled,0.3,0.2115,0.2115,0.2115,0.6926
+MLPPositionFeatureAssignment,zero,0.3,0.3077,0.3077,0.3077,0.5007
+MLPPositionFeatureAssignment,random_wrong,0.3,0.2404,0.2404,0.2404,0.6765
+ObjectCentricFeatureAssignment,normal,0.3,0.7596,0.7596,0.7596,0.5817
+ObjectCentricFeatureAssignment,shuffled,0.3,0.7596,0.7596,0.7596,0.5802
+ObjectCentricFeatureAssignment,zero,0.3,0.6923,0.6923,0.6923,0.5277
+ObjectCentricFeatureAssignment,random_wrong,0.3,0.7500,0.7500,0.7500,0.6113

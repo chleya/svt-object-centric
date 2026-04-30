@@ -1,0 +1,13 @@
+model,beta,feature_mode,identity_swap_only,assignment_accuracy,clean_skill
+FeatureOnly,N/A,normal,1.0000,1.0000,0.6691
+FeatureOnly,N/A,shuffled,0.5096,0.5096,0.6693
+FeatureOnly,N/A,zero,0.0000,0.0000,0.4738
+FeatureOnly,N/A,random_wrong,0.1250,0.1250,0.6462
+Hybrid_b1.0,1.0,normal,0.9904,0.9904,0.6911
+Hybrid_b1.0,1.0,shuffled,0.5385,0.5385,0.6907
+Hybrid_b1.0,1.0,zero,0.4327,0.4327,0.5473
+Hybrid_b1.0,1.0,random_wrong,0.3365,0.3365,0.6872
+Hybrid_b2.0,2.0,normal,1.0000,1.0000,0.6852
+Hybrid_b2.0,2.0,shuffled,0.5096,0.5096,0.6843
+Hybrid_b2.0,2.0,zero,0.1538,0.1538,0.4531
+Hybrid_b2.0,2.0,random_wrong,0.1250,0.1250,0.6551

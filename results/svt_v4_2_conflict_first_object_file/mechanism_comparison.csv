@@ -1,0 +1,10 @@
+mechanism,identity_swap_only,identity_overall,feature_dependency_score,trajectory_dependency_score
+FeatureOnly,1.0000,1.0000,0.4904,0.0000
+TrajectoryOnly,0.1538,0.1538,0.0000,0.1538
+Hybrid_b1.0,1.0000,1.0000,0.4904,0.2692
+ObjectFile_v4,0.0962,0.0962,0.0192,0.0962
+ImprovedObjectFile_v4.1,0.5673,0.5673,0.1154,0.4519
+ConflictFirst_traj,0.4519,0.4519,0.0000,0.4519
+ConflictFirst_feat_low_traj,0.7404,0.7404,0.2981,0.1827
+ConflictFirst_abstain,0.4519,0.4519,0.0000,0.4519
+ConflictFirst_margin,0.5192,0.5192,0.1250,0.3173

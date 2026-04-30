@@ -1,0 +1,5 @@
+seed,setting,model,identity_accuracy,notes
+0,featureless,RawTrajectoryKNN,0.8050,No distinguishing features between objects
+0,featureless,RandomIdentityBaseline,0.5200,No distinguishing features between objects
+0,feature_bearing,FeatureAwareIdentityBaseline,0.5000,Objects have unique features (color/marker)
+0,featureless,FeatureAwareIdentityBaseline,0.5000,All features identical - baseline should be ~0.5

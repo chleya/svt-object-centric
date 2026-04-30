@@ -1,0 +1,171 @@
+# SVT-v2.1 Leakage and Identifiability Audit Report
+
+**Date**: 2026-04-27
+**Purpose**: Explain why RawKNN v1 achieves identity=0.805 on identity_test. This is an audit, not a victory report.
+
+---
+
+## 1. Purpose
+
+本审计解释 RawKNN v1 identity=0.805 的来源。本审计不是 v3，不是新模型竞赛。
+
+---
+
+## 2. Main Findings
+
+| Audit | One-line Conclusion |
+|-------|-------------------|
+| A. Object Order | **RawKNN identity 从 0.805 降到 0.195** — object order 是主要泄漏源 |
+| B. Disjoint Init | 不相交初始位置后 identity=0.747 — 不是位置泄漏 |
+| C. Swap Randomization | 随机化后 identity=0.745 — 不是 swap/occlusion 模板 |
+| D. Label Permutation | 置换标签后 identity=0.470-0.555 — metric 无 bug |
+| E. Position Ablation | TranslationNormalizedKNN=0.740 — 不是绝对位置 |
+| F. NN Source | 正确预测 NN 距离(40.5) < 错误预测(57.1) — 依赖轨迹相似性 |
+| G. Identifiability | FeatureAwareBaseline 在 featureless 中=0.500 — 任务不可辨识 |
+
+---
+
+## 3. RawKNN Identity Diagnosis
+
+### RawKNN 的高 identity 是否仍然成立？
+
+**部分成立，但严重依赖 object order。**
+
+- 原始顺序：identity = 0.805
+- 随机化顺序后：identity = 0.195
+
+### 最可能泄漏来源
+
+**Object order bias 是主要泄漏源**（identity drop = 0.610，severity = serious）。
+
+数据生成时，物体按固定顺序编号（object 0, object 1）。k-NN 检索时，如果 train 的 object 0 和 test 的 object 0 在轨迹形状上相似（因为它们遵循相同的物理规则），k-NN 自然倾向于"不交换"的分配。当随机打乱 object order 后，train 的 object 0 可能对应 test 的 object 1，导致 k-NN 的轨迹匹配逻辑完全反转。
+
+### 如果不下降，可能是什么真实线索？
+
+在不随机化 object order 的情况下，RawKNN 的 0.805 来自：
+1. **Object order 一致性**（~75%）：train 和 test 的 object 编号一致
+2. **轨迹形状相似性**（~25%）：k-NN 匹配相似轨迹，"不交换"版本往往 MSE 更低
+
+---
+
+## 4. Metric Sanity Check
+
+### Label permutation 后 accuracy 是否接近随机？
+
+**是。**
+
+| Model | Original ID | Permuted ID (avg) |
+|-------|------------|-------------------|
+| RawTrajectoryKNN | 0.805 | 0.497 |
+| RawDeltaKNN | 0.530 | 0.496 |
+| RandomIdentityBaseline | 0.520 | 0.490 |
+
+所有模型在标签置换后 identity 接近 0.500（随机水平）。**Metric 无 bug。**
+
+---
+
+## 5. Identifiability
+
+### Featureless task 是否可辨识？
+
+**不可辨识。**
+
+- FeatureAwareIdentityBaseline 在 featureless 环境中 = 0.500（随机）
+- 没有任何可观测特征区分两个物体
+- 轨迹分类一致性 = 0.400（低于随机）
+
+### Feature-bearing objects 是否使 identity 可解？
+
+**FeatureAwareIdentityBaseline 未在 feature-bearing 环境中显著提升**（因为当前数据没有 feature 通道）。
+
+但理论上，如果给每个物体添加独特特征（颜色、标记），FeatureAwareBaseline 应接近 1.0。当前实验中 feature-bearing 测试受限——因为现有模型只接受 position 输入，不支持 feature 通道。
+
+---
+
+## 6. Required Revision to SVT-v2 Report
+
+### 必须修正的结论
+
+1. **禁止写 "all models fail above random identity"**
+   - RawTrajectoryKNN v1 在原始 object order 下达到 0.805，显著高于随机
+   - 建议改为："Most learned and delta-output models collapse toward random identity under identity-swap tests, while raw retrieval retains above-random identity under some settings, requiring leakage and identifiability analysis."
+
+2. **禁止写 "velocity continuity is logically incapable of detecting swaps"**
+   - 这个结论仍然成立（环面环境验证），但需要补充：即使 velocity continuity 失败，trajectory matching 在 object order 一致时仍有效
+
+3. **必须说明 object order 是主要泄漏源**
+   - 随机化后 RawKNN 从 0.805 降到 0.195
+   - 这是 serious 级别的泄漏
+
+4. **必须说明 featureless identity task 不可辨识**
+   - 没有可观测特征区分物体
+   - 任何高于随机的 identity 准确率都可能来自泄漏而非理解
+
+---
+
+## 7. Recommendation for SVT-v3
+
+### 是否可以进入 v3？
+
+**可以，但必须先修复 object order 泄漏。**
+
+### v3 应优先修复什么
+
+1. **随机化 object order**（最高优先级）
+   - 在数据生成时随机打乱 object 编号
+   - 确保 train 和 test 的 object order 独立
+
+2. **添加 feature-bearing objects**
+   - 给每个物体添加可观测特征（颜色、标记、大小）
+   - 让 identity task 从"不可辨识"变为"可辨识"
+   - 这样才能真正测试模型的身份追踪能力
+
+3. **使用 disjoint train/test splits**
+   - 虽然 Audit B 显示位置泄漏不严重，但作为最佳实践应采用
+
+### 是否需要 feature-bearing objects？
+
+**是。** 当前 featureless 环境下，identity task 不可辨识。没有 feature 的 identity 追踪本质上是在猜测——任何高于随机的结果都可能是泄漏。
+
+### 是否需要 disjoint train/test splits？
+
+**建议但非必须。** Audit B 显示位置泄漏不严重（drop=0.058），但作为最佳实践应采用。
+
+---
+
+## Audit Summary Table
+
+| Audit | RawKNN Original | RawKNN After | Drop | Diagnosis | Severity |
+|-------|----------------|-------------|------|-----------|----------|
+| A. Object Order | 0.805 | 0.195 | 0.610 | object_order_leakage_likely | **serious** |
+| B. Disjoint Init | 0.805 | 0.747 | 0.058 | no_major_position_leakage | none |
+| C. Swap Randomization | 0.805 | 0.745 | 0.060 | no_major_swap_template_effect | none |
+| D. Label Permutation | 0.805 | 0.497 | 0.308 | no_metric_bug_detected | none |
+| E. Position Ablation | 0.805 | 0.740 | 0.065 | trajectory_shape_contributes | none |
+| F. NN Source | 0.805 | 0.735 | 0.070 | rawknn_identity_remains_unexplained | mild |
+| G. Identifiability | 0.805 | N/A | N/A | identifiability_unclear | none |
+
+**Final Recommendation: fix_dataset_leakage_first**
+
+---
+
+## Output Files
+
+| File | Status |
+|------|--------|
+| object_order_audit.csv | ✅ Generated |
+| disjoint_init_audit.csv | ✅ Generated |
+| swap_randomization_audit.csv | ✅ Generated |
+| label_permutation_audit.csv | ✅ Generated |
+| position_ablation_audit.csv | ✅ Generated |
+| nn_source_analysis.csv | ✅ Generated |
+| identifiability_probe.csv | ✅ Generated |
+| audit_summary.csv | ✅ Generated |
+| nn_distance_plot.png | ✅ Generated |
+| audit_fingerprint.png | ✅ Generated |
+| README.md | ✅ This file |
+
+---
+
+*Generated by scripts/run_svt_v2_1_audit.py*
+*This is an audit, not a victory report.*

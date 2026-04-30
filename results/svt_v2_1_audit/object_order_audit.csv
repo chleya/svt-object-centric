@@ -1,0 +1,7 @@
+seed,setting,model,clean_skill,identity_accuracy,gated_svt_score
+0,original_order,RawTrajectoryKNN,0.2939,0.8050,0.0000
+0,original_order,RawDeltaKNN,0.4749,0.5300,0.0000
+0,original_order,TranslationNormalizedKNN,0.2548,0.7400,0.0000
+0,randomized_order,RawTrajectoryKNN,0.2939,0.1950,0.0000
+0,randomized_order,RawDeltaKNN,0.4749,0.4700,0.0000
+0,randomized_order,TranslationNormalizedKNN,0.2548,0.2600,0.0000

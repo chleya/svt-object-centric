@@ -1,0 +1,1028 @@
+[
+  {
+    "mechanism": "CA-LOF_no_aug/combined",
+    "num_objects": 2,
+    "feature_dim": 2,
+    "seed": 0,
+    "swap_only": "1.0000",
+    "overall": "1.0000",
+    "conflict_a": "0.0000"
+  },
+  {
+    "mechanism": "CA-LOF_no_aug/feature",
+    "num_objects": 2,
+    "feature_dim": 2,
+    "seed": 0,
+    "swap_only": "1.0000",
+    "overall": "1.0000",
+    "conflict_a": "0.0000"
+  },
+  {
+    "mechanism": "CA-LOF_no_aug/trajectory",
+    "num_objects": 2,
+    "feature_dim": 2,
+    "seed": 0,
+    "swap_only": "0.0000",
+    "overall": "0.0105",
+    "conflict_a": "0.9810"
+  },
+  {
+    "mechanism": "CA-LOF_drop0.1/combined",
+    "num_objects": 2,
+    "feature_dim": 2,
+    "seed": 0,
+    "swap_only": "1.0000",
+    "overall": "1.0000",
+    "conflict_a": "0.0000"
+  },
+  {
+    "mechanism": "CA-LOF_drop0.1/feature",
+    "num_objects": 2,
+    "feature_dim": 2,
+    "seed": 0,
+    "swap_only": "1.0000",
+    "overall": "1.0000",
+    "conflict_a": "0.0000"
+  },
+  {
+    "mechanism": "CA-LOF_drop0.1/trajectory",
+    "num_objects": 2,
+    "feature_dim": 2,
+    "seed": 0,
+    "swap_only": "0.0000",
+    "overall": "0.0105",
+    "conflict_a": "0.9810"
+  },
+  {
+    "mechanism": "CA-LOF_conf0.3/combined",
+    "num_objects": 2,
+    "feature_dim": 2,
+    "seed": 0,
+    "swap_only": "0.0106",
+    "overall": "0.0211",
+    "conflict_a": "0.9333"
+  },
+  {
+    "mechanism": "CA-LOF_conf0.3/feature",
+    "num_objects": 2,
+    "feature_dim": 2,
+    "seed": 0,
+    "swap_only": "1.0000",
+    "overall": "1.0000",
+    "conflict_a": "0.0000"
+  },
+  {
+    "mechanism": "CA-LOF_conf0.3/trajectory",
+    "num_objects": 2,
+    "feature_dim": 2,
+    "seed": 0,
+    "swap_only": "0.0000",
+    "overall": "0.0105",
+    "conflict_a": "0.9810"
+  },
+  {
+    "mechanism": "CA-LOF_conf0.3_drop0.1/combined",
+    "num_objects": 2,
+    "feature_dim": 2,
+    "seed": 0,
+    "swap_only": "0.0426",
+    "overall": "0.0526",
+    "conflict_a": "0.9143"
+  },
+  {
+    "mechanism": "CA-LOF_conf0.3_drop0.1/feature",
+    "num_objects": 2,
+    "feature_dim": 2,
+    "seed": 0,
+    "swap_only": "1.0000",
+    "overall": "1.0000",
+    "conflict_a": "0.0000"
+  },
+  {
+    "mechanism": "CA-LOF_conf0.3_drop0.1/trajectory",
+    "num_objects": 2,
+    "feature_dim": 2,
+    "seed": 0,
+    "swap_only": "0.0106",
+    "overall": "0.0211",
+    "conflict_a": "0.9810"
+  },
+  {
+    "mechanism": "CA-LOF_conf0.5/combined",
+    "num_objects": 2,
+    "feature_dim": 2,
+    "seed": 0,
+    "swap_only": "0.0106",
+    "overall": "0.0211",
+    "conflict_a": "1.0000"
+  },
+  {
+    "mechanism": "CA-LOF_conf0.5/feature",
+    "num_objects": 2,
+    "feature_dim": 2,
+    "seed": 0,
+    "swap_only": "0.0000",
+    "overall": "0.0000",
+    "conflict_a": "0.0000"
+  },
+  {
+    "mechanism": "CA-LOF_conf0.5/trajectory",
+    "num_objects": 2,
+    "feature_dim": 2,
+    "seed": 0,
+    "swap_only": "0.0106",
+    "overall": "0.0211",
+    "conflict_a": "1.0000"
+  },
+  {
+    "mechanism": "CA-LOF_conf0.5_drop0.1/combined",
+    "num_objects": 2,
+    "feature_dim": 2,
+    "seed": 0,
+    "swap_only": "0.0000",
+    "overall": "0.0105",
+    "conflict_a": "1.0000"
+  },
+  {
+    "mechanism": "CA-LOF_conf0.5_drop0.1/feature",
+    "num_objects": 2,
+    "feature_dim": 2,
+    "seed": 0,
+    "swap_only": "0.0000",
+    "overall": "0.0000",
+    "conflict_a": "1.0000"
+  },
+  {
+    "mechanism": "CA-LOF_conf0.5_drop0.1/trajectory",
+    "num_objects": 2,
+    "feature_dim": 2,
+    "seed": 0,
+    "swap_only": "0.0000",
+    "overall": "0.0105",
+    "conflict_a": "0.9810"
+  },
+  {
+    "mechanism": "CFObjectFile_rule",
+    "num_objects": 2,
+    "feature_dim": 2,
+    "seed": 0,
+    "swap_only": "0.5638",
+    "overall": "0.5684",
+    "conflict_a": "0.7143"
+  },
+  {
+    "mechanism": "CA-LOF_no_aug/combined",
+    "num_objects": 2,
+    "feature_dim": 2,
+    "seed": 42,
+    "swap_only": "1.0000",
+    "overall": "1.0000",
+    "conflict_a": "0.0000"
+  },
+  {
+    "mechanism": "CA-LOF_no_aug/feature",
+    "num_objects": 2,
+    "feature_dim": 2,
+    "seed": 42,
+    "swap_only": "1.0000",
+    "overall": "1.0000",
+    "conflict_a": "0.0000"
+  },
+  {
+    "mechanism": "CA-LOF_no_aug/trajectory",
+    "num_objects": 2,
+    "feature_dim": 2,
+    "seed": 42,
+    "swap_only": "0.0000",
+    "overall": "0.0000",
+    "conflict_a": "0.9796"
+  },
+  {
+    "mechanism": "CA-LOF_drop0.1/combined",
+    "num_objects": 2,
+    "feature_dim": 2,
+    "seed": 42,
+    "swap_only": "1.0000",
+    "overall": "1.0000",
+    "conflict_a": "0.0000"
+  },
+  {
+    "mechanism": "CA-LOF_drop0.1/feature",
+    "num_objects": 2,
+    "feature_dim": 2,
+    "seed": 42,
+    "swap_only": "1.0000",
+    "overall": "1.0000",
+    "conflict_a": "0.0000"
+  },
+  {
+    "mechanism": "CA-LOF_drop0.1/trajectory",
+    "num_objects": 2,
+    "feature_dim": 2,
+    "seed": 42,
+    "swap_only": "0.0110",
+    "overall": "0.0110",
+    "conflict_a": "0.9898"
+  },
+  {
+    "mechanism": "CA-LOF_conf0.3/combined",
+    "num_objects": 2,
+    "feature_dim": 2,
+    "seed": 42,
+    "swap_only": "0.0659",
+    "overall": "0.0659",
+    "conflict_a": "0.9184"
+  },
+  {
+    "mechanism": "CA-LOF_conf0.3/feature",
+    "num_objects": 2,
+    "feature_dim": 2,
+    "seed": 42,
+    "swap_only": "1.0000",
+    "overall": "1.0000",
+    "conflict_a": "0.0000"
+  },
+  {
+    "mechanism": "CA-LOF_conf0.3/trajectory",
+    "num_objects": 2,
+    "feature_dim": 2,
+    "seed": 42,
+    "swap_only": "0.0220",
+    "overall": "0.0220",
+    "conflict_a": "1.0000"
+  },
+  {
+    "mechanism": "CA-LOF_conf0.3_drop0.1/combined",
+    "num_objects": 2,
+    "feature_dim": 2,
+    "seed": 42,
+    "swap_only": "0.0769",
+    "overall": "0.0769",
+    "conflict_a": "0.8878"
+  },
+  {
+    "mechanism": "CA-LOF_conf0.3_drop0.1/feature",
+    "num_objects": 2,
+    "feature_dim": 2,
+    "seed": 42,
+    "swap_only": "1.0000",
+    "overall": "1.0000",
+    "conflict_a": "0.0000"
+  },
+  {
+    "mechanism": "CA-LOF_conf0.3_drop0.1/trajectory",
+    "num_objects": 2,
+    "feature_dim": 2,
+    "seed": 42,
+    "swap_only": "0.0000",
+    "overall": "0.0000",
+    "conflict_a": "0.9694"
+  },
+  {
+    "mechanism": "CA-LOF_conf0.5/combined",
+    "num_objects": 2,
+    "feature_dim": 2,
+    "seed": 42,
+    "swap_only": "0.0330",
+    "overall": "0.0330",
+    "conflict_a": "0.9898"
+  },
+  {
+    "mechanism": "CA-LOF_conf0.5/feature",
+    "num_objects": 2,
+    "feature_dim": 2,
+    "seed": 42,
+    "swap_only": "0.0000",
+    "overall": "0.0000",
+    "conflict_a": "0.0000"
+  },
+  {
+    "mechanism": "CA-LOF_conf0.5/trajectory",
+    "num_objects": 2,
+    "feature_dim": 2,
+    "seed": 42,
+    "swap_only": "0.0330",
+    "overall": "0.0330",
+    "conflict_a": "0.9898"
+  },
+  {
+    "mechanism": "CA-LOF_conf0.5_drop0.1/combined",
+    "num_objects": 2,
+    "feature_dim": 2,
+    "seed": 42,
+    "swap_only": "0.0000",
+    "overall": "0.0000",
+    "conflict_a": "1.0000"
+  },
+  {
+    "mechanism": "CA-LOF_conf0.5_drop0.1/feature",
+    "num_objects": 2,
+    "feature_dim": 2,
+    "seed": 42,
+    "swap_only": "0.0000",
+    "overall": "0.0000",
+    "conflict_a": "1.0000"
+  },
+  {
+    "mechanism": "CA-LOF_conf0.5_drop0.1/trajectory",
+    "num_objects": 2,
+    "feature_dim": 2,
+    "seed": 42,
+    "swap_only": "0.0220",
+    "overall": "0.0220",
+    "conflict_a": "0.9898"
+  },
+  {
+    "mechanism": "CFObjectFile_rule",
+    "num_objects": 2,
+    "feature_dim": 2,
+    "seed": 42,
+    "swap_only": "0.5275",
+    "overall": "0.5275",
+    "conflict_a": "0.6020"
+  },
+  {
+    "mechanism": "CA-LOF_no_aug/combined",
+    "num_objects": 2,
+    "feature_dim": 2,
+    "seed": 123,
+    "swap_only": "1.0000",
+    "overall": "1.0000",
+    "conflict_a": "0.0000"
+  },
+  {
+    "mechanism": "CA-LOF_no_aug/feature",
+    "num_objects": 2,
+    "feature_dim": 2,
+    "seed": 123,
+    "swap_only": "1.0000",
+    "overall": "1.0000",
+    "conflict_a": "0.0000"
+  },
+  {
+    "mechanism": "CA-LOF_no_aug/trajectory",
+    "num_objects": 2,
+    "feature_dim": 2,
+    "seed": 123,
+    "swap_only": "0.0190",
+    "overall": "0.0190",
+    "conflict_a": "0.9825"
+  },
+  {
+    "mechanism": "CA-LOF_drop0.1/combined",
+    "num_objects": 2,
+    "feature_dim": 2,
+    "seed": 123,
+    "swap_only": "1.0000",
+    "overall": "1.0000",
+    "conflict_a": "0.0000"
+  },
+  {
+    "mechanism": "CA-LOF_drop0.1/feature",
+    "num_objects": 2,
+    "feature_dim": 2,
+    "seed": 123,
+    "swap_only": "1.0000",
+    "overall": "1.0000",
+    "conflict_a": "0.0000"
+  },
+  {
+    "mechanism": "CA-LOF_drop0.1/trajectory",
+    "num_objects": 2,
+    "feature_dim": 2,
+    "seed": 123,
+    "swap_only": "0.0190",
+    "overall": "0.0190",
+    "conflict_a": "0.9298"
+  },
+  {
+    "mechanism": "CA-LOF_conf0.3/combined",
+    "num_objects": 2,
+    "feature_dim": 2,
+    "seed": 123,
+    "swap_only": "0.1143",
+    "overall": "0.1143",
+    "conflict_a": "0.8509"
+  },
+  {
+    "mechanism": "CA-LOF_conf0.3/feature",
+    "num_objects": 2,
+    "feature_dim": 2,
+    "seed": 123,
+    "swap_only": "1.0000",
+    "overall": "1.0000",
+    "conflict_a": "0.0000"
+  },
+  {
+    "mechanism": "CA-LOF_conf0.3/trajectory",
+    "num_objects": 2,
+    "feature_dim": 2,
+    "seed": 123,
+    "swap_only": "0.0571",
+    "overall": "0.0571",
+    "conflict_a": "0.9737"
+  },
+  {
+    "mechanism": "CA-LOF_conf0.3_drop0.1/combined",
+    "num_objects": 2,
+    "feature_dim": 2,
+    "seed": 123,
+    "swap_only": "0.1048",
+    "overall": "0.1048",
+    "conflict_a": "0.8947"
+  },
+  {
+    "mechanism": "CA-LOF_conf0.3_drop0.1/feature",
+    "num_objects": 2,
+    "feature_dim": 2,
+    "seed": 123,
+    "swap_only": "1.0000",
+    "overall": "1.0000",
+    "conflict_a": "0.0000"
+  },
+  {
+    "mechanism": "CA-LOF_conf0.3_drop0.1/trajectory",
+    "num_objects": 2,
+    "feature_dim": 2,
+    "seed": 123,
+    "swap_only": "0.0286",
+    "overall": "0.0286",
+    "conflict_a": "0.9561"
+  },
+  {
+    "mechanism": "CA-LOF_conf0.5/combined",
+    "num_objects": 2,
+    "feature_dim": 2,
+    "seed": 123,
+    "swap_only": "0.0381",
+    "overall": "0.0381",
+    "conflict_a": "0.9912"
+  },
+  {
+    "mechanism": "CA-LOF_conf0.5/feature",
+    "num_objects": 2,
+    "feature_dim": 2,
+    "seed": 123,
+    "swap_only": "0.0000",
+    "overall": "0.0000",
+    "conflict_a": "0.0000"
+  },
+  {
+    "mechanism": "CA-LOF_conf0.5/trajectory",
+    "num_objects": 2,
+    "feature_dim": 2,
+    "seed": 123,
+    "swap_only": "0.0381",
+    "overall": "0.0381",
+    "conflict_a": "0.9912"
+  },
+  {
+    "mechanism": "CA-LOF_conf0.5_drop0.1/combined",
+    "num_objects": 2,
+    "feature_dim": 2,
+    "seed": 123,
+    "swap_only": "0.0000",
+    "overall": "0.0000",
+    "conflict_a": "1.0000"
+  },
+  {
+    "mechanism": "CA-LOF_conf0.5_drop0.1/feature",
+    "num_objects": 2,
+    "feature_dim": 2,
+    "seed": 123,
+    "swap_only": "0.0000",
+    "overall": "0.0000",
+    "conflict_a": "1.0000"
+  },
+  {
+    "mechanism": "CA-LOF_conf0.5_drop0.1/trajectory",
+    "num_objects": 2,
+    "feature_dim": 2,
+    "seed": 123,
+    "swap_only": "0.0476",
+    "overall": "0.0476",
+    "conflict_a": "0.9561"
+  },
+  {
+    "mechanism": "CFObjectFile_rule",
+    "num_objects": 2,
+    "feature_dim": 2,
+    "seed": 123,
+    "swap_only": "0.6000",
+    "overall": "0.6000",
+    "conflict_a": "0.6579"
+  },
+  {
+    "mechanism": "CA-LOF_no_aug/combined",
+    "num_objects": 3,
+    "feature_dim": 16,
+    "seed": 0,
+    "swap_only": "1.0000",
+    "overall": "1.0000",
+    "conflict_a": "0.0000"
+  },
+  {
+    "mechanism": "CA-LOF_no_aug/feature",
+    "num_objects": 3,
+    "feature_dim": 16,
+    "seed": 0,
+    "swap_only": "1.0000",
+    "overall": "1.0000",
+    "conflict_a": "0.0000"
+  },
+  {
+    "mechanism": "CA-LOF_no_aug/trajectory",
+    "num_objects": 3,
+    "feature_dim": 16,
+    "seed": 0,
+    "swap_only": "0.0000",
+    "overall": "0.0097",
+    "conflict_a": "0.9259"
+  },
+  {
+    "mechanism": "CA-LOF_drop0.1/combined",
+    "num_objects": 3,
+    "feature_dim": 16,
+    "seed": 0,
+    "swap_only": "1.0000",
+    "overall": "1.0000",
+    "conflict_a": "0.0000"
+  },
+  {
+    "mechanism": "CA-LOF_drop0.1/feature",
+    "num_objects": 3,
+    "feature_dim": 16,
+    "seed": 0,
+    "swap_only": "1.0000",
+    "overall": "1.0000",
+    "conflict_a": "0.0000"
+  },
+  {
+    "mechanism": "CA-LOF_drop0.1/trajectory",
+    "num_objects": 3,
+    "feature_dim": 16,
+    "seed": 0,
+    "swap_only": "0.0000",
+    "overall": "0.0097",
+    "conflict_a": "0.9074"
+  },
+  {
+    "mechanism": "CA-LOF_conf0.3/combined",
+    "num_objects": 3,
+    "feature_dim": 16,
+    "seed": 0,
+    "swap_only": "0.0667",
+    "overall": "0.1068",
+    "conflict_a": "0.7685"
+  },
+  {
+    "mechanism": "CA-LOF_conf0.3/feature",
+    "num_objects": 3,
+    "feature_dim": 16,
+    "seed": 0,
+    "swap_only": "1.0000",
+    "overall": "1.0000",
+    "conflict_a": "0.0000"
+  },
+  {
+    "mechanism": "CA-LOF_conf0.3/trajectory",
+    "num_objects": 3,
+    "feature_dim": 16,
+    "seed": 0,
+    "swap_only": "0.0167",
+    "overall": "0.0291",
+    "conflict_a": "0.8796"
+  },
+  {
+    "mechanism": "CA-LOF_conf0.3_drop0.1/combined",
+    "num_objects": 3,
+    "feature_dim": 16,
+    "seed": 0,
+    "swap_only": "0.1000",
+    "overall": "0.1068",
+    "conflict_a": "0.7593"
+  },
+  {
+    "mechanism": "CA-LOF_conf0.3_drop0.1/feature",
+    "num_objects": 3,
+    "feature_dim": 16,
+    "seed": 0,
+    "swap_only": "1.0000",
+    "overall": "1.0000",
+    "conflict_a": "0.0000"
+  },
+  {
+    "mechanism": "CA-LOF_conf0.3_drop0.1/trajectory",
+    "num_objects": 3,
+    "feature_dim": 16,
+    "seed": 0,
+    "swap_only": "0.0000",
+    "overall": "0.0000",
+    "conflict_a": "0.8426"
+  },
+  {
+    "mechanism": "CA-LOF_conf0.5/combined",
+    "num_objects": 3,
+    "feature_dim": 16,
+    "seed": 0,
+    "swap_only": "0.0000",
+    "overall": "0.0388",
+    "conflict_a": "0.8889"
+  },
+  {
+    "mechanism": "CA-LOF_conf0.5/feature",
+    "num_objects": 3,
+    "feature_dim": 16,
+    "seed": 0,
+    "swap_only": "1.0000",
+    "overall": "1.0000",
+    "conflict_a": "0.0000"
+  },
+  {
+    "mechanism": "CA-LOF_conf0.5/trajectory",
+    "num_objects": 3,
+    "feature_dim": 16,
+    "seed": 0,
+    "swap_only": "0.0000",
+    "overall": "0.0097",
+    "conflict_a": "0.9259"
+  },
+  {
+    "mechanism": "CA-LOF_conf0.5_drop0.1/combined",
+    "num_objects": 3,
+    "feature_dim": 16,
+    "seed": 0,
+    "swap_only": "0.0333",
+    "overall": "0.0291",
+    "conflict_a": "0.9167"
+  },
+  {
+    "mechanism": "CA-LOF_conf0.5_drop0.1/feature",
+    "num_objects": 3,
+    "feature_dim": 16,
+    "seed": 0,
+    "swap_only": "1.0000",
+    "overall": "1.0000",
+    "conflict_a": "0.0000"
+  },
+  {
+    "mechanism": "CA-LOF_conf0.5_drop0.1/trajectory",
+    "num_objects": 3,
+    "feature_dim": 16,
+    "seed": 0,
+    "swap_only": "0.0000",
+    "overall": "0.0097",
+    "conflict_a": "0.8704"
+  },
+  {
+    "mechanism": "CFObjectFile_rule",
+    "num_objects": 3,
+    "feature_dim": 16,
+    "seed": 0,
+    "swap_only": "0.6333",
+    "overall": "0.5631",
+    "conflict_a": "0.3889"
+  },
+  {
+    "mechanism": "CA-LOF_no_aug/combined",
+    "num_objects": 3,
+    "feature_dim": 16,
+    "seed": 42,
+    "swap_only": "1.0000",
+    "overall": "1.0000",
+    "conflict_a": "0.0000"
+  },
+  {
+    "mechanism": "CA-LOF_no_aug/feature",
+    "num_objects": 3,
+    "feature_dim": 16,
+    "seed": 42,
+    "swap_only": "1.0000",
+    "overall": "1.0000",
+    "conflict_a": "0.0000"
+  },
+  {
+    "mechanism": "CA-LOF_no_aug/trajectory",
+    "num_objects": 3,
+    "feature_dim": 16,
+    "seed": 42,
+    "swap_only": "0.0267",
+    "overall": "0.0476",
+    "conflict_a": "0.9700"
+  },
+  {
+    "mechanism": "CA-LOF_drop0.1/combined",
+    "num_objects": 3,
+    "feature_dim": 16,
+    "seed": 42,
+    "swap_only": "1.0000",
+    "overall": "1.0000",
+    "conflict_a": "0.0000"
+  },
+  {
+    "mechanism": "CA-LOF_drop0.1/feature",
+    "num_objects": 3,
+    "feature_dim": 16,
+    "seed": 42,
+    "swap_only": "1.0000",
+    "overall": "1.0000",
+    "conflict_a": "0.0000"
+  },
+  {
+    "mechanism": "CA-LOF_drop0.1/trajectory",
+    "num_objects": 3,
+    "feature_dim": 16,
+    "seed": 42,
+    "swap_only": "0.0000",
+    "overall": "0.0095",
+    "conflict_a": "0.9800"
+  },
+  {
+    "mechanism": "CA-LOF_conf0.3/combined",
+    "num_objects": 3,
+    "feature_dim": 16,
+    "seed": 42,
+    "swap_only": "0.1600",
+    "overall": "0.1714",
+    "conflict_a": "0.8300"
+  },
+  {
+    "mechanism": "CA-LOF_conf0.3/feature",
+    "num_objects": 3,
+    "feature_dim": 16,
+    "seed": 42,
+    "swap_only": "1.0000",
+    "overall": "1.0000",
+    "conflict_a": "0.0000"
+  },
+  {
+    "mechanism": "CA-LOF_conf0.3/trajectory",
+    "num_objects": 3,
+    "feature_dim": 16,
+    "seed": 42,
+    "swap_only": "0.0133",
+    "overall": "0.0190",
+    "conflict_a": "0.9700"
+  },
+  {
+    "mechanism": "CA-LOF_conf0.3_drop0.1/combined",
+    "num_objects": 3,
+    "feature_dim": 16,
+    "seed": 42,
+    "swap_only": "0.1067",
+    "overall": "0.1143",
+    "conflict_a": "0.7900"
+  },
+  {
+    "mechanism": "CA-LOF_conf0.3_drop0.1/feature",
+    "num_objects": 3,
+    "feature_dim": 16,
+    "seed": 42,
+    "swap_only": "1.0000",
+    "overall": "1.0000",
+    "conflict_a": "0.0000"
+  },
+  {
+    "mechanism": "CA-LOF_conf0.3_drop0.1/trajectory",
+    "num_objects": 3,
+    "feature_dim": 16,
+    "seed": 42,
+    "swap_only": "0.0133",
+    "overall": "0.0286",
+    "conflict_a": "0.9000"
+  },
+  {
+    "mechanism": "CA-LOF_conf0.5/combined",
+    "num_objects": 3,
+    "feature_dim": 16,
+    "seed": 42,
+    "swap_only": "0.0667",
+    "overall": "0.0952",
+    "conflict_a": "0.8800"
+  },
+  {
+    "mechanism": "CA-LOF_conf0.5/feature",
+    "num_objects": 3,
+    "feature_dim": 16,
+    "seed": 42,
+    "swap_only": "1.0000",
+    "overall": "1.0000",
+    "conflict_a": "0.0000"
+  },
+  {
+    "mechanism": "CA-LOF_conf0.5/trajectory",
+    "num_objects": 3,
+    "feature_dim": 16,
+    "seed": 42,
+    "swap_only": "0.0133",
+    "overall": "0.0286",
+    "conflict_a": "0.9300"
+  },
+  {
+    "mechanism": "CA-LOF_conf0.5_drop0.1/combined",
+    "num_objects": 3,
+    "feature_dim": 16,
+    "seed": 42,
+    "swap_only": "0.0400",
+    "overall": "0.0667",
+    "conflict_a": "0.9600"
+  },
+  {
+    "mechanism": "CA-LOF_conf0.5_drop0.1/feature",
+    "num_objects": 3,
+    "feature_dim": 16,
+    "seed": 42,
+    "swap_only": "1.0000",
+    "overall": "1.0000",
+    "conflict_a": "0.0000"
+  },
+  {
+    "mechanism": "CA-LOF_conf0.5_drop0.1/trajectory",
+    "num_objects": 3,
+    "feature_dim": 16,
+    "seed": 42,
+    "swap_only": "0.0133",
+    "overall": "0.0190",
+    "conflict_a": "0.9600"
+  },
+  {
+    "mechanism": "CFObjectFile_rule",
+    "num_objects": 3,
+    "feature_dim": 16,
+    "seed": 42,
+    "swap_only": "0.4933",
+    "overall": "0.5238",
+    "conflict_a": "0.3600"
+  },
+  {
+    "mechanism": "CA-LOF_no_aug/combined",
+    "num_objects": 3,
+    "feature_dim": 16,
+    "seed": 123,
+    "swap_only": "1.0000",
+    "overall": "1.0000",
+    "conflict_a": "0.0000"
+  },
+  {
+    "mechanism": "CA-LOF_no_aug/feature",
+    "num_objects": 3,
+    "feature_dim": 16,
+    "seed": 123,
+    "swap_only": "1.0000",
+    "overall": "1.0000",
+    "conflict_a": "0.0000"
+  },
+  {
+    "mechanism": "CA-LOF_no_aug/trajectory",
+    "num_objects": 3,
+    "feature_dim": 16,
+    "seed": 123,
+    "swap_only": "0.0169",
+    "overall": "0.0194",
+    "conflict_a": "0.9608"
+  },
+  {
+    "mechanism": "CA-LOF_drop0.1/combined",
+    "num_objects": 3,
+    "feature_dim": 16,
+    "seed": 123,
+    "swap_only": "1.0000",
+    "overall": "1.0000",
+    "conflict_a": "0.0000"
+  },
+  {
+    "mechanism": "CA-LOF_drop0.1/feature",
+    "num_objects": 3,
+    "feature_dim": 16,
+    "seed": 123,
+    "swap_only": "1.0000",
+    "overall": "1.0000",
+    "conflict_a": "0.0000"
+  },
+  {
+    "mechanism": "CA-LOF_drop0.1/trajectory",
+    "num_objects": 3,
+    "feature_dim": 16,
+    "seed": 123,
+    "swap_only": "0.0000",
+    "overall": "0.0097",
+    "conflict_a": "0.9412"
+  },
+  {
+    "mechanism": "CA-LOF_conf0.3/combined",
+    "num_objects": 3,
+    "feature_dim": 16,
+    "seed": 123,
+    "swap_only": "0.0508",
+    "overall": "0.0680",
+    "conflict_a": "0.8922"
+  },
+  {
+    "mechanism": "CA-LOF_conf0.3/feature",
+    "num_objects": 3,
+    "feature_dim": 16,
+    "seed": 123,
+    "swap_only": "1.0000",
+    "overall": "1.0000",
+    "conflict_a": "0.0000"
+  },
+  {
+    "mechanism": "CA-LOF_conf0.3/trajectory",
+    "num_objects": 3,
+    "feature_dim": 16,
+    "seed": 123,
+    "swap_only": "0.0000",
+    "overall": "0.0097",
+    "conflict_a": "0.9216"
+  },
+  {
+    "mechanism": "CA-LOF_conf0.3_drop0.1/combined",
+    "num_objects": 3,
+    "feature_dim": 16,
+    "seed": 123,
+    "swap_only": "0.0508",
+    "overall": "0.0680",
+    "conflict_a": "0.8922"
+  },
+  {
+    "mechanism": "CA-LOF_conf0.3_drop0.1/feature",
+    "num_objects": 3,
+    "feature_dim": 16,
+    "seed": 123,
+    "swap_only": "1.0000",
+    "overall": "1.0000",
+    "conflict_a": "0.0000"
+  },
+  {
+    "mechanism": "CA-LOF_conf0.3_drop0.1/trajectory",
+    "num_objects": 3,
+    "feature_dim": 16,
+    "seed": 123,
+    "swap_only": "0.0000",
+    "overall": "0.0194",
+    "conflict_a": "0.9510"
+  },
+  {
+    "mechanism": "CA-LOF_conf0.5/combined",
+    "num_objects": 3,
+    "feature_dim": 16,
+    "seed": 123,
+    "swap_only": "0.0508",
+    "overall": "0.0583",
+    "conflict_a": "0.9706"
+  },
+  {
+    "mechanism": "CA-LOF_conf0.5/feature",
+    "num_objects": 3,
+    "feature_dim": 16,
+    "seed": 123,
+    "swap_only": "0.9831",
+    "overall": "0.9903",
+    "conflict_a": "0.0000"
+  },
+  {
+    "mechanism": "CA-LOF_conf0.5/trajectory",
+    "num_objects": 3,
+    "feature_dim": 16,
+    "seed": 123,
+    "swap_only": "0.0000",
+    "overall": "0.0194",
+    "conflict_a": "0.9510"
+  },
+  {
+    "mechanism": "CA-LOF_conf0.5_drop0.1/combined",
+    "num_objects": 3,
+    "feature_dim": 16,
+    "seed": 123,
+    "swap_only": "0.0508",
+    "overall": "0.0680",
+    "conflict_a": "0.9902"
+  },
+  {
+    "mechanism": "CA-LOF_conf0.5_drop0.1/feature",
+    "num_objects": 3,
+    "feature_dim": 16,
+    "seed": 123,
+    "swap_only": "1.0000",
+    "overall": "1.0000",
+    "conflict_a": "0.0000"
+  },
+  {
+    "mechanism": "CA-LOF_conf0.5_drop0.1/trajectory",
+    "num_objects": 3,
+    "feature_dim": 16,
+    "seed": 123,
+    "swap_only": "0.0339",
+    "overall": "0.0388",
+    "conflict_a": "0.9510"
+  },
+  {
+    "mechanism": "CFObjectFile_rule",
+    "num_objects": 3,
+    "feature_dim": 16,
+    "seed": 123,
+    "swap_only": "0.4915",
+    "overall": "0.5534",
+    "conflict_a": "0.4118"
+  }
+]

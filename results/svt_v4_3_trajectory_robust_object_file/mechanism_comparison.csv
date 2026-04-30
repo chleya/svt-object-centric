@@ -1,0 +1,12 @@
+mechanism,identity_swap_only,identity_overall,feature_dependency_score,trajectory_dependency_score
+FeatureOnly,1.0000,1.0000,0.4904,0.0096
+TrajectoryOnly,0.1731,0.1731,0.0000,0.1731
+TrajectoryOnly_aug,0.1250,0.1250,0.0000,0.1250
+Hybrid_b1.0,0.9904,0.9904,0.2692,0.7885
+ObjectFile_v4,0.0962,0.0962,0.0192,0.0962
+ImprovedObjectFile_v4.1,0.6058,0.6058,0.1538,0.4423
+ConflictFirst_margin_v4.2,0.5288,0.5288,0.1538,0.3077
+TrajRobust_aware_v4.3,0.5673,0.5673,0.2500,0.1058
+TrajRobust_aware_aug_v4.3,0.6250,0.6250,0.2692,0.0865
+TrajRobust_veto_v4.3,0.5096,0.5096,0.1442,0.2212
+TrajRobust_veto_aug_v4.3,0.5288,0.5288,0.1442,0.2404

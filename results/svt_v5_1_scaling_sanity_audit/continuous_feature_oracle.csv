@@ -1,0 +1,5 @@
+condition,accuracy,swap_only_accuracy
+normal,1.0000,1.0000
+shuffled,0.1700,nan
+zero,0.7200,nan
+wrong_features,0.0000,nan

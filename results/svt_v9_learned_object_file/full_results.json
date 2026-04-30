@@ -1,0 +1,314 @@
+[
+  {
+    "mechanism": "LearnedObjectFile_combined",
+    "num_objects": 2,
+    "feature_dim": 2,
+    "seed": 0,
+    "swap_only": "1.0000",
+    "overall": "1.0000",
+    "conflict_a": "0.0000"
+  },
+  {
+    "mechanism": "LearnedObjectFile_feature",
+    "num_objects": 2,
+    "feature_dim": 2,
+    "seed": 0,
+    "swap_only": "1.0000",
+    "overall": "1.0000",
+    "conflict_a": "0.0000"
+  },
+  {
+    "mechanism": "LearnedObjectFile_trajectory",
+    "num_objects": 2,
+    "feature_dim": 2,
+    "seed": 0,
+    "swap_only": "0.0106",
+    "overall": "0.0211",
+    "conflict_a": "0.5333"
+  },
+  {
+    "mechanism": "FeatureOnly",
+    "num_objects": 2,
+    "feature_dim": 2,
+    "seed": 0,
+    "swap_only": "1.0000",
+    "overall": "1.0000"
+  },
+  {
+    "mechanism": "Hybrid",
+    "num_objects": 2,
+    "feature_dim": 2,
+    "seed": 0,
+    "swap_only": "0.9894",
+    "overall": "0.9895"
+  },
+  {
+    "mechanism": "CFObjectFile_rule",
+    "num_objects": 2,
+    "feature_dim": 2,
+    "seed": 0,
+    "swap_only": "0.5213",
+    "overall": "0.5263",
+    "conflict_a": "0.7143"
+  },
+  {
+    "mechanism": "LearnedObjectFile_combined",
+    "num_objects": 2,
+    "feature_dim": 2,
+    "seed": 42,
+    "swap_only": "1.0000",
+    "overall": "1.0000",
+    "conflict_a": "0.0000"
+  },
+  {
+    "mechanism": "LearnedObjectFile_feature",
+    "num_objects": 2,
+    "feature_dim": 2,
+    "seed": 42,
+    "swap_only": "1.0000",
+    "overall": "1.0000",
+    "conflict_a": "0.0000"
+  },
+  {
+    "mechanism": "LearnedObjectFile_trajectory",
+    "num_objects": 2,
+    "feature_dim": 2,
+    "seed": 42,
+    "swap_only": "0.0110",
+    "overall": "0.0110",
+    "conflict_a": "0.8878"
+  },
+  {
+    "mechanism": "FeatureOnly",
+    "num_objects": 2,
+    "feature_dim": 2,
+    "seed": 42,
+    "swap_only": "1.0000",
+    "overall": "1.0000"
+  },
+  {
+    "mechanism": "Hybrid",
+    "num_objects": 2,
+    "feature_dim": 2,
+    "seed": 42,
+    "swap_only": "1.0000",
+    "overall": "1.0000"
+  },
+  {
+    "mechanism": "CFObjectFile_rule",
+    "num_objects": 2,
+    "feature_dim": 2,
+    "seed": 42,
+    "swap_only": "0.5385",
+    "overall": "0.5385",
+    "conflict_a": "0.6224"
+  },
+  {
+    "mechanism": "LearnedObjectFile_combined",
+    "num_objects": 2,
+    "feature_dim": 2,
+    "seed": 123,
+    "swap_only": "1.0000",
+    "overall": "1.0000",
+    "conflict_a": "0.0000"
+  },
+  {
+    "mechanism": "LearnedObjectFile_feature",
+    "num_objects": 2,
+    "feature_dim": 2,
+    "seed": 123,
+    "swap_only": "1.0000",
+    "overall": "1.0000",
+    "conflict_a": "0.0000"
+  },
+  {
+    "mechanism": "LearnedObjectFile_trajectory",
+    "num_objects": 2,
+    "feature_dim": 2,
+    "seed": 123,
+    "swap_only": "0.0095",
+    "overall": "0.0095",
+    "conflict_a": "0.4912"
+  },
+  {
+    "mechanism": "FeatureOnly",
+    "num_objects": 2,
+    "feature_dim": 2,
+    "seed": 123,
+    "swap_only": "1.0000",
+    "overall": "1.0000"
+  },
+  {
+    "mechanism": "Hybrid",
+    "num_objects": 2,
+    "feature_dim": 2,
+    "seed": 123,
+    "swap_only": "0.9619",
+    "overall": "0.9619"
+  },
+  {
+    "mechanism": "CFObjectFile_rule",
+    "num_objects": 2,
+    "feature_dim": 2,
+    "seed": 123,
+    "swap_only": "0.5619",
+    "overall": "0.5619",
+    "conflict_a": "0.6491"
+  },
+  {
+    "mechanism": "LearnedObjectFile_combined",
+    "num_objects": 3,
+    "feature_dim": 16,
+    "seed": 0,
+    "swap_only": "1.0000",
+    "overall": "0.9903",
+    "conflict_a": "0.0000"
+  },
+  {
+    "mechanism": "LearnedObjectFile_feature",
+    "num_objects": 3,
+    "feature_dim": 16,
+    "seed": 0,
+    "swap_only": "1.0000",
+    "overall": "0.9903",
+    "conflict_a": "0.0000"
+  },
+  {
+    "mechanism": "LearnedObjectFile_trajectory",
+    "num_objects": 3,
+    "feature_dim": 16,
+    "seed": 0,
+    "swap_only": "0.0000",
+    "overall": "0.0000",
+    "conflict_a": "0.4352"
+  },
+  {
+    "mechanism": "FeatureOnly",
+    "num_objects": 3,
+    "feature_dim": 16,
+    "seed": 0,
+    "swap_only": "1.0000",
+    "overall": "1.0000"
+  },
+  {
+    "mechanism": "Hybrid",
+    "num_objects": 3,
+    "feature_dim": 16,
+    "seed": 0,
+    "swap_only": "0.0333",
+    "overall": "0.0388"
+  },
+  {
+    "mechanism": "CFObjectFile_rule",
+    "num_objects": 3,
+    "feature_dim": 16,
+    "seed": 0,
+    "swap_only": "0.6833",
+    "overall": "0.6214",
+    "conflict_a": "0.3796"
+  },
+  {
+    "mechanism": "LearnedObjectFile_combined",
+    "num_objects": 3,
+    "feature_dim": 16,
+    "seed": 42,
+    "swap_only": "1.0000",
+    "overall": "1.0000",
+    "conflict_a": "0.0000"
+  },
+  {
+    "mechanism": "LearnedObjectFile_feature",
+    "num_objects": 3,
+    "feature_dim": 16,
+    "seed": 42,
+    "swap_only": "1.0000",
+    "overall": "1.0000",
+    "conflict_a": "0.0000"
+  },
+  {
+    "mechanism": "LearnedObjectFile_trajectory",
+    "num_objects": 3,
+    "feature_dim": 16,
+    "seed": 42,
+    "swap_only": "0.0267",
+    "overall": "0.0286",
+    "conflict_a": "0.9100"
+  },
+  {
+    "mechanism": "FeatureOnly",
+    "num_objects": 3,
+    "feature_dim": 16,
+    "seed": 42,
+    "swap_only": "1.0000",
+    "overall": "1.0000"
+  },
+  {
+    "mechanism": "Hybrid",
+    "num_objects": 3,
+    "feature_dim": 16,
+    "seed": 42,
+    "swap_only": "0.0533",
+    "overall": "0.0476"
+  },
+  {
+    "mechanism": "CFObjectFile_rule",
+    "num_objects": 3,
+    "feature_dim": 16,
+    "seed": 42,
+    "swap_only": "0.5600",
+    "overall": "0.5333",
+    "conflict_a": "0.4100"
+  },
+  {
+    "mechanism": "LearnedObjectFile_combined",
+    "num_objects": 3,
+    "feature_dim": 16,
+    "seed": 123,
+    "swap_only": "1.0000",
+    "overall": "1.0000",
+    "conflict_a": "0.0000"
+  },
+  {
+    "mechanism": "LearnedObjectFile_feature",
+    "num_objects": 3,
+    "feature_dim": 16,
+    "seed": 123,
+    "swap_only": "1.0000",
+    "overall": "1.0000",
+    "conflict_a": "0.0000"
+  },
+  {
+    "mechanism": "LearnedObjectFile_trajectory",
+    "num_objects": 3,
+    "feature_dim": 16,
+    "seed": 123,
+    "swap_only": "0.0339",
+    "overall": "0.0291",
+    "conflict_a": "0.9216"
+  },
+  {
+    "mechanism": "FeatureOnly",
+    "num_objects": 3,
+    "feature_dim": 16,
+    "seed": 123,
+    "swap_only": "1.0000",
+    "overall": "1.0000"
+  },
+  {
+    "mechanism": "Hybrid",
+    "num_objects": 3,
+    "feature_dim": 16,
+    "seed": 123,
+    "swap_only": "0.1864",
+    "overall": "0.1165"
+  },
+  {
+    "mechanism": "CFObjectFile_rule",
+    "num_objects": 3,
+    "feature_dim": 16,
+    "seed": 123,
+    "swap_only": "0.5424",
+    "overall": "0.6019",
+    "conflict_a": "0.3922"
+  }
+]

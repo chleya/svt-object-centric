@@ -1,0 +1,11 @@
+seed,feature_mode,model,original_identity_accuracy,permuted_identity_accuracy,permutation_id,status
+0,featureless,RawTrajectoryKNN,0.8000,0.5579,0,PASS
+0,featureless,RawTrajectoryKNN,0.8000,0.5368,1,PASS
+0,featureless,RawTrajectoryKNN,0.8000,0.5684,2,PASS
+0,featureless,RawTrajectoryKNN,0.8000,0.4211,3,PASS
+0,featureless,RawTrajectoryKNN,0.8000,0.5684,4,PASS
+0,feature_bearing,RawTrajectoryKNN,0.8000,0.4211,0,PASS
+0,feature_bearing,RawTrajectoryKNN,0.8000,0.5579,1,PASS
+0,feature_bearing,RawTrajectoryKNN,0.8000,0.5789,2,PASS
+0,feature_bearing,RawTrajectoryKNN,0.8000,0.5158,3,PASS
+0,feature_bearing,RawTrajectoryKNN,0.8000,0.5053,4,PASS

@@ -1,0 +1,10 @@
+seed,model,clean_skill,cf_skill,comp_skill,identity_overall,identity_swap_only,gated_score_overall_id,gated_score_swap_only,score_drop,no_swap_bias_flag
+0,LastVelocityBaseline,-25.2114,-8.1762,-43.6378,0.7736,0.0400,0.0000,0.0000,0.0000,True
+0,RawTrajectoryKNN,0.4890,0.4693,0.4087,0.8679,0.6000,0.0000,0.0000,0.0000,True
+0,RawDeltaKNN,0.7287,0.6981,0.5876,0.8019,0.2000,0.2397,0.0598,0.1799,True
+0,TranslationNormalizedKNN,0.4826,0.5774,0.3382,0.8396,0.4000,0.0000,0.0000,0.0000,True
+0,FeatureAwareIdentityBaseline,0.0000,0.0000,0.0000,1.0000,1.0000,0.0000,0.0000,0.0000,False
+0,RandomIdentityBaseline,0.0000,0.0000,0.0000,0.5189,0.6000,0.0000,0.0000,0.0000,False
+0,MLPPositionOnly,0.6159,0.5947,0.4836,0.7642,0.0000,0.1354,0.0000,0.1354,True
+0,MLPPositionFeature,0.6586,0.6402,0.5005,0.7642,0.0000,0.1613,0.0000,0.1613,True
+0,ObjectCentricFeatureModel,0.5587,0.4996,0.2923,0.7642,0.0000,0.0624,0.0000,0.0624,True

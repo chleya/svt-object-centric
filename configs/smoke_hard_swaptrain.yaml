@@ -1,0 +1,39 @@
+seed: 42
+
+world:
+  width: 64.0
+  height: 64.0
+  num_objects: 2
+  object_radius: 1.5
+  dt: 1.0
+  t_obs: 10
+  t_pred: 20
+  allow_occlusion: true
+  allow_crossing: true
+  allow_hidden_perturbation: true
+  occlusion_radius: 3.0
+  hidden_perturbation_strength: 0.5
+  gravity: 0.3
+  friction: 0.02
+  acceleration_noise: 0.15
+
+data:
+  n_train: 1000
+  n_clean_test: 200
+  n_counterfactual_test: 200
+  n_compositional_test: 200
+  n_identity_test: 200
+  velocity_range: [-2.5, 2.5]
+  position_range: [5.0, 59.0]
+  save_dir: "data_hard_swaptrain"
+
+knn:
+  k_values: [1, 3, 5, 10]
+  weighting: "inverse_distance"
+  max_train: 1000
+
+metrics:
+  clean_skill_threshold: 0.5
+  near_threshold: 5.0
+  far_threshold: 15.0
+  identity_swap_distance: 3.0

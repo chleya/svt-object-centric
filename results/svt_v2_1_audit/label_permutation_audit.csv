@@ -1,0 +1,16 @@
+seed,permutation_id,model,original_identity_accuracy,permuted_identity_accuracy
+0,0,RawTrajectoryKNN,0.8050,0.4700
+0,1,RawTrajectoryKNN,0.8050,0.4750
+0,2,RawTrajectoryKNN,0.8050,0.5550
+0,3,RawTrajectoryKNN,0.8050,0.5200
+0,4,RawTrajectoryKNN,0.8050,0.4650
+0,0,RawDeltaKNN,0.5300,0.4400
+0,1,RawDeltaKNN,0.5300,0.5250
+0,2,RawDeltaKNN,0.5300,0.5550
+0,3,RawDeltaKNN,0.5300,0.4900
+0,4,RawDeltaKNN,0.5300,0.4700
+0,0,RandomIdentityBaseline,0.5200,0.5100
+0,1,RandomIdentityBaseline,0.5200,0.5000
+0,2,RandomIdentityBaseline,0.5200,0.4800
+0,3,RandomIdentityBaseline,0.5200,0.4700
+0,4,RandomIdentityBaseline,0.5200,0.4900

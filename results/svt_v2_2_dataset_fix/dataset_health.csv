@@ -1,0 +1,7 @@
+check_name,status,value,expected_range,diagnosis,severity
+object_order_randomized_default,PASS,True,True,randomize_object_order=True by default,none
+featureless_identifiability,PASS,0.5000,0.4-0.6,FeatureAwareBaseline near random,none
+feature_bearing_identifiability,PASS,1.0000,>=0.95,Features enable identity tracking,none
+label_permutation_sanity,PASS,0.5305,0.35-0.65,Metric valid,none
+disjoint_init_split,PASS,enabled,train/test init positions separated,Disjoint split applied,none
+rawknn_no_object_order_leakage,CHECK_NEEDED,0.8000,<0.7 after randomization,May have other factors,mild

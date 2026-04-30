@@ -1,0 +1,11 @@
+experiment,mechanism,swap_only,feat_dep,traj_dep
+2obj_onehot,FO_2obj_onehot,1.0000,0.4894,0.0000
+2obj_onehot,Traj_2obj_onehot,0.1596,0.0000,0.1596
+2obj_onehot,MTTraj_2obj_onehot,0.1809,0.0000,0.1809
+2obj_onehot,CF_margin_2obj_onehot,0.5532,0.1277,0.2872
+2obj_onehot,CF_margin_MT_2obj_onehot,0.5745,0.1277,0.2979
+3obj_cont16,FO_3obj_cont16,1.0000,0.8333,0.0000
+3obj_cont16,Traj_3obj,0.0667,0.0000,0.0667
+3obj_cont16,MTTraj_3obj,0.0500,0.0000,0.0500
+3obj_cont16,CF_margin_traj_3obj_cont16,0.6500,0.4500,0.1500
+3obj_cont16,CF_margin_MT_3obj_cont16,0.6333,0.4500,0.1000

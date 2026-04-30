@@ -1,0 +1,9 @@
+check_name,status,value,expected,severity,required_action
+label_permutation_sanity,PASS,0.5232,permuted identity around 0.5,none,none
+featureless_identifiability,PASS,0.5000,FeatureAwareBaseline featureless around 0.5,none,none
+feature_bearing_identifiability,PASS,1.0000,FeatureAwareBaseline feature_bearing >= 0.95,none,none
+object_order_leakage_checked,PASS,leakage_found_and_fixed,v2.1/v2.2 audit exists and order randomized,warning,none (leakage was found in v2.1 but fixed in v2.2)
+swap_only_split_valid,PASS,"100% swap (no_swap=nan, FAB_fb_swap=1.0)",swap_only split contains 100% swap episodes,none,none
+no_swap_only_split_valid,PASS,0% swap (swap_only=nan),no_swap_only split contains 0% swap episodes,none,none
+no_swap_bias_detected,WARNING,max_gap=0.226,overall identity not much greater than swap_only identity,warning,Use identity_swap_only as primary metric; overall identity is inflated by no-swap episodes
+identity_metric_policy,PASS,identity_swap_only_available,identity_swap_only present in v2.3 outputs,none,none

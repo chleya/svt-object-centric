@@ -1,0 +1,6 @@
+mechanism,identity_swap_only,identity_overall,feature_dependency_score,trajectory_dependency_score
+FeatureOnly,1.0000,1.0000,0.4904,0.0000
+TrajectoryOnly,0.1442,0.1442,0.0000,0.1442
+Hybrid_b1.0,1.0000,1.0000,0.4904,0.1058
+ObjectFile_v4,0.0962,0.0962,0.0192,0.0962
+ImprovedObjectFile,0.5577,0.5577,0.1250,0.4231

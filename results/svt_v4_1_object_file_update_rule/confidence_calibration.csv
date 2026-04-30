@@ -1,0 +1,3 @@
+mechanism,identity_swap_only,avg_confidence_correct,avg_confidence_incorrect,confidence_calibration_error,chosen_source_feature_rate,chosen_source_trajectory_rate,chosen_source_uncertain_rate,chosen_source_agreement_rate
+ObjectFile_v4,0.0962,1.0000,1.0000,0.0000,nan,nan,nan,nan
+ImprovedObjectFile,0.5577,1.0000,1.0000,0.0000,1.0000,0.0000,0.0000,0.0000

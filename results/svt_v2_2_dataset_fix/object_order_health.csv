@@ -1,0 +1,4 @@
+seed,feature_mode,order_setting,model,identity_accuracy,identity_drop_from_legacy,status
+0,featureless,fixed_order_legacy,RawTrajectoryKNN,0.7950,0.0000,baseline
+0,featureless,randomized_order_v22,RawTrajectoryKNN,0.8000,-0.0050,CHECK_NEEDED
+0,feature_bearing,randomized_order_v22,RawTrajectoryKNN,0.8000,-0.0050,CHECK_NEEDED

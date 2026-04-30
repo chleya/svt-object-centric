@@ -1,0 +1,7 @@
+seed,feature_mode,model,clean_skill,cf_skill,comp_skill,identity_overall,identity_swap_only,gated_score_overall_id,gated_score_swap_only_id
+0,featureless,RawTrajectoryKNN,0.3535,0.0000,0.0000,0.8000,0.6383,0.0000,0.0000
+0,featureless,RawDeltaKNN,0.3746,0.0000,0.0000,0.5474,0.1277,0.0000,0.0000
+0,featureless,TranslationNormalizedKNN,0.2112,0.0000,0.0000,0.7579,0.5319,0.0000,0.0000
+0,feature_bearing,RawTrajectoryKNN,0.3535,0.0000,0.0000,0.8000,0.6383,0.0000,0.0000
+0,feature_bearing,RawDeltaKNN,0.3746,0.0000,0.0000,0.5474,0.1277,0.0000,0.0000
+0,feature_bearing,TranslationNormalizedKNN,0.2112,0.0000,0.0000,0.7579,0.5319,0.0000,0.0000

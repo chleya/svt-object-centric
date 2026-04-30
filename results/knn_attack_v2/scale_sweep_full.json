@@ -1,0 +1,137 @@
+[
+  {
+    "model": "TranslationNormalizedDeltaKNN",
+    "n_train": 50,
+    "k": 5,
+    "clean_skill": 0.8565423324235609,
+    "clean_mse": 42.11101116437383,
+    "identity_acc": 0.55,
+    "gated_svt_score": 0.0
+  },
+  {
+    "model": "RawDeltaKNN",
+    "n_train": 50,
+    "k": 5,
+    "clean_skill": 0.8597793435985418,
+    "clean_mse": 41.16080880829419,
+    "identity_acc": 0.55,
+    "gated_svt_score": 0.0
+  },
+  {
+    "model": "LastVelocityBaseline",
+    "n_train": 50,
+    "k": 0,
+    "clean_skill": 0.9440269725420066,
+    "clean_mse": 16.430497051901607,
+    "identity_acc": 0.56,
+    "gated_svt_score": 0.0
+  },
+  {
+    "model": "TranslationNormalizedDeltaKNN",
+    "n_train": 100,
+    "k": 5,
+    "clean_skill": 0.8766256695063908,
+    "clean_mse": 36.21568576001859,
+    "identity_acc": 0.55,
+    "gated_svt_score": 0.0
+  },
+  {
+    "model": "RawDeltaKNN",
+    "n_train": 100,
+    "k": 5,
+    "clean_skill": 0.8688898741950394,
+    "clean_mse": 38.48647524255392,
+    "identity_acc": 0.555,
+    "gated_svt_score": 0.0
+  },
+  {
+    "model": "LastVelocityBaseline",
+    "n_train": 100,
+    "k": 0,
+    "clean_skill": 0.9440269725420066,
+    "clean_mse": 16.430497051901607,
+    "identity_acc": 0.56,
+    "gated_svt_score": 0.0
+  },
+  {
+    "model": "TranslationNormalizedDeltaKNN",
+    "n_train": 250,
+    "k": 5,
+    "clean_skill": 0.8934821244811623,
+    "clean_mse": 31.267589393847427,
+    "identity_acc": 0.565,
+    "gated_svt_score": 0.0
+  },
+  {
+    "model": "RawDeltaKNN",
+    "n_train": 250,
+    "k": 5,
+    "clean_skill": 0.872568144225397,
+    "clean_mse": 37.40674438584361,
+    "identity_acc": 0.555,
+    "gated_svt_score": 0.0
+  },
+  {
+    "model": "LastVelocityBaseline",
+    "n_train": 250,
+    "k": 0,
+    "clean_skill": 0.9440269725420066,
+    "clean_mse": 16.430497051901607,
+    "identity_acc": 0.56,
+    "gated_svt_score": 0.0
+  },
+  {
+    "model": "TranslationNormalizedDeltaKNN",
+    "n_train": 500,
+    "k": 5,
+    "clean_skill": 0.905534644531027,
+    "clean_mse": 27.729655068320643,
+    "identity_acc": 0.57,
+    "gated_svt_score": 0.0
+  },
+  {
+    "model": "RawDeltaKNN",
+    "n_train": 500,
+    "k": 5,
+    "clean_skill": 0.8938648389182786,
+    "clean_mse": 31.155246204344614,
+    "identity_acc": 0.555,
+    "gated_svt_score": 0.0
+  },
+  {
+    "model": "LastVelocityBaseline",
+    "n_train": 500,
+    "k": 0,
+    "clean_skill": 0.9440269725420066,
+    "clean_mse": 16.430497051901607,
+    "identity_acc": 0.56,
+    "gated_svt_score": 0.0
+  },
+  {
+    "model": "TranslationNormalizedDeltaKNN",
+    "n_train": 1000,
+    "k": 5,
+    "clean_skill": 0.9185999954486398,
+    "clean_mse": 23.89441121100024,
+    "identity_acc": 0.57,
+    "gated_svt_score": 0.0
+  },
+  {
+    "model": "RawDeltaKNN",
+    "n_train": 1000,
+    "k": 5,
+    "clean_skill": 0.9065549774470966,
+    "clean_mse": 27.430143361864886,
+    "identity_acc": 0.57,
+    "gated_svt_score": 0.0
+  },
+  {
+    "model": "LastVelocityBaseline",
+    "n_train": 1000,
+    "k": 0,
+    "clean_skill": 0.9440269725420066,
+    "clean_mse": 16.430497051901607,
+    "identity_acc": 0.56,
+    "gated_svt_score": 0.0
+  }
+]

@@ -1,0 +1,9 @@
+experiment,mechanism,conflict_identity,traj_correct_rate
+2obj_onehot,FO_2obj_onehot,0.0000,0.0000
+2obj_onehot,Traj_2obj_onehot,0.9524,0.9524
+2obj_onehot,CF_margin_2obj_onehot,0.7619,0.7619
+3obj_cont16,FO_3obj_cont16,0.0000,0.0000
+3obj_cont16,Traj_3obj,0.8148,0.8148
+3obj_cont16,MTTraj_3obj,0.8241,0.8241
+3obj_cont16,CF_margin_traj_3obj_cont16,0.3426,0.3426
+3obj_cont16,CF_margin_MT_3obj_cont16,0.3889,0.3889

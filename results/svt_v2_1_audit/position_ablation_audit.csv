@@ -1,0 +1,5 @@
+seed,model,uses_absolute_position,clean_skill,identity_accuracy,gated_svt_score
+0,RawTrajectoryKNN,True,0.2939,0.8050,0.0000
+0,TranslationNormalizedKNN,False,0.2548,0.7400,0.0000
+0,VelocityOnlyKNN,False,0.2328,0.5600,0.0000
+0,RawDeltaKNN,True,0.4749,0.5300,0.0000

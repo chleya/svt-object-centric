@@ -1,0 +1,8 @@
+audit_name,main_question,rawknn_identity_original,rawknn_identity_after_audit,identity_drop,diagnosis,severity
+A_object_order,Does RawKNN rely on object order?,0.8050,0.1950,0.6100,object_order_leakage_likely,serious
+B_disjoint_init,Does RawKNN rely on train/test position overlap?,0.8050,0.7474,0.0576,no_major_position_leakage,none
+C_swap_randomization,Does RawKNN rely on fixed swap/occlusion patterns?,0.8050,0.7450,0.0600,no_major_swap_template_effect,none
+D_label_permutation,Is the identity metric broken?,0.8050,0.4970,0.3080,no_metric_bug_detected,none
+E_position_ablation,Does RawKNN rely on absolute position?,0.8050,0.7400,0.0650,trajectory_shape_contributes,none
+F_nn_source,What drives correct NN identity predictions?,0.8050,0.7350,0.0700,rawknn_identity_remains_unexplained,mild
+G_identifiability,Is the featureless identity task identifiable?,0.8050,0.5000,NaN,identifiability_unclear,none

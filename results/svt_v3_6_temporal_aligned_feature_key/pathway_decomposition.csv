@@ -1,0 +1,11 @@
+model,beta,feature_mode,traj_swap_only,feat_swap_only,hybrid_swap_only
+Hybrid_b1.0,1.0,normal,0.4038,1.0000,0.9904
+Hybrid_b1.0,1.0,shuffled,0.4038,0.5096,0.5385
+Hybrid_b1.0,1.0,zero,0.4327,0.0000,0.4327
+Hybrid_b1.0,1.0,random_wrong,0.4135,0.1635,0.3365
+Hybrid_b2.0,2.0,normal,0.0865,1.0000,1.0000
+Hybrid_b2.0,2.0,shuffled,0.0865,0.5096,0.5096
+Hybrid_b2.0,2.0,zero,0.1538,0.0000,0.1538
+Hybrid_b2.0,2.0,random_wrong,0.1154,0.1538,0.1250
+Hybrid_b1.0,1.0,dep_score,0.0000,0.4904,0.4519
+Hybrid_b2.0,2.0,dep_score,0.0000,0.4904,0.4904

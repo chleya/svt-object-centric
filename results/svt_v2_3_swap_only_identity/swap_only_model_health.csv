@@ -1,0 +1,11 @@
+seed,feature_mode,model,swap_only_identity,status
+0,featureless,RawTrajectoryKNN,0.6889,NO_SWAP_BIAS
+0,featureless,RawDeltaKNN,0.1889,PASS
+0,featureless,TranslationNormalizedKNN,0.6667,NO_SWAP_BIAS
+0,featureless,RandomIdentityBaseline,0.5333,PASS
+0,featureless,FeatureAwareIdentityBaseline,0.5333,PASS
+0,feature_bearing,RawTrajectoryKNN,0.6889,NO_SWAP_BIAS
+0,feature_bearing,RawDeltaKNN,0.1889,PASS
+0,feature_bearing,TranslationNormalizedKNN,0.6667,NO_SWAP_BIAS
+0,feature_bearing,RandomIdentityBaseline,0.5333,PASS
+0,feature_bearing,FeatureAwareIdentityBaseline,1.0000,PASS

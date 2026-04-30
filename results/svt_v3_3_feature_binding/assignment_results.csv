@@ -1,0 +1,9 @@
+swap_ratio,model,clean_skill,assignment_accuracy_swap_only,identity_swap_only,identity_overall_mixed,identity_no_swap_mixed,no_swap_bias_gap,balanced_identity
+0.0,MLPPositionFeatureAssignment,0.0613,0.0000,0.0000,0.7642,1.0000,0.7642,0.5000
+0.0,ObjectCentricFeatureAssignment,-0.5427,0.0000,0.0000,0.7642,1.0000,0.7642,0.5000
+0.1,MLPPositionFeatureAssignment,0.6879,0.6923,0.6923,0.8868,0.9753,0.2868,0.7877
+0.1,ObjectCentricFeatureAssignment,0.5701,0.9231,0.9231,0.8774,0.9259,0.1574,0.8230
+0.3,MLPPositionFeatureAssignment,0.6757,0.4423,0.4423,0.8302,0.9753,0.4702,0.6677
+0.3,ObjectCentricFeatureAssignment,0.5621,0.9423,0.9423,0.8962,0.9259,0.0962,0.8630
+0.5,MLPPositionFeatureAssignment,0.6818,0.4519,0.4519,0.8396,0.9877,0.4796,0.6738
+0.5,ObjectCentricFeatureAssignment,0.5959,0.8654,0.8654,0.8962,0.9753,0.2562,0.8077

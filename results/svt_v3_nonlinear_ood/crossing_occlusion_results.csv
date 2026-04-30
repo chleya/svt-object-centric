@@ -1,0 +1,5 @@
+seed,model,has_crossing,has_occlusion,crossing_occlusion_skill,identity_after_crossing,identity_after_occlusion,identity_after_crossing_and_occlusion
+0,LastVelocityBaseline,1725.9860,7670.6060,-43.6378,0.7727,0.6282,0.4444
+0,RawTrajectoryKNN,38.5698,97.1586,0.4087,0.9091,0.8462,0.8889
+0,RawDeltaKNN,35.8071,68.1874,0.5876,0.9091,0.7051,0.7778
+0,TranslationNormalizedKNN,78.7163,104.3499,0.3382,0.9091,0.8333,1.0000

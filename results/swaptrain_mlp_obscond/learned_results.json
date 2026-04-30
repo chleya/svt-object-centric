@@ -1,0 +1,58 @@
+{
+  "mlp": {
+    "clean": {
+      "mse": 45.76552146333417,
+      "mean_predictor_mse": 212.6385939440148,
+      "skill_score": 0.784773212545867,
+      "normalized_mse": 0.215226787454133,
+      "traj_identity_accuracy": 0.98,
+      "vel_identity_accuracy": 0.97,
+      "model_identity_accuracy": 0.0
+    },
+    "counterfactual": {
+      "mse": 535.01357699831,
+      "mean_predictor_mse": 520.2854438709942,
+      "skill_score": -0.028307793925073987,
+      "normalized_mse": 1.028307793925074,
+      "traj_identity_accuracy": 0.91,
+      "vel_identity_accuracy": 0.89,
+      "model_identity_accuracy": 0.0
+    },
+    "compositional": {
+      "mse": 43.865060155037284,
+      "mean_predictor_mse": 211.38380255477242,
+      "skill_score": 0.7924861809425003,
+      "normalized_mse": 0.2075138190574997,
+      "traj_identity_accuracy": 0.995,
+      "vel_identity_accuracy": 0.97,
+      "model_identity_accuracy": 0.0
+    },
+    "identity": {
+      "mse": 61.56556151897136,
+      "mean_predictor_mse": 231.3307003846689,
+      "skill_score": 0.7338634196991713,
+      "normalized_mse": 0.2661365803008286,
+      "traj_identity_accuracy": 0.525,
+      "vel_identity_accuracy": 0.63,
+      "model_identity_accuracy": 0.5
+    },
+    "gated_traj": {
+      "clean_skill": 0.784773212545867,
+      "cf_skill": -0.028307793925073987,
+      "comp_skill": 0.7924861809425003,
+      "identity_accuracy": 0.525,
+      "gated_svt_score": 0.0,
+      "gate_passed": true
+    },
+    "old_smss_traj": 0.0,
+    "gated_vel": {
+      "clean_skill": 0.784773212545867,
+      "cf_skill": -0.028307793925073987,
+      "comp_skill": 0.7924861809425003,
+      "identity_accuracy": 0.63,
+      "gated_svt_score": 0.0,
+      "gate_passed": true
+    },
+    "old_smss_vel": 0.0
+  }
+}

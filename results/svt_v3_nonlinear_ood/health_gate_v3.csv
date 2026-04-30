@@ -1,0 +1,9 @@
+check_name,status,value,expected,severity,required_action
+featureless_identifiability,PASS,0.4800,around 0.5,none,none
+feature_bearing_identifiability,PASS,1.0000,>=0.95,none,none
+random_baseline_swap_only,PASS,0.5288,around 0.5,none,none
+swap_only_split_valid,PASS,True,True,none,none
+no_swap_only_split_valid,PASS,True,True,none,none
+randomize_object_order,PASS,True,True,none,none
+identity_swap_only_present,PASS,True,True,none,none
+no_swap_bias_reported,PASS,True,True,none,none

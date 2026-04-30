@@ -1,0 +1,10 @@
+seed,model,model_type,uses_position,uses_feature,is_object_centric,clean_skill,crossing_occlusion_skill,ood_skill,identity_overall,identity_no_swap,identity_swap_only,balanced_identity,no_swap_bias_gap,no_swap_bias_flag
+0,LastVelocityBaseline,baseline,True,False,False,-25.2114,-43.6378,-8.1762,0.7736,1.0000,0.0400,0.5200,0.7336,True
+0,RawTrajectoryKNN,baseline,True,False,False,0.4890,0.4087,0.4693,0.8679,0.9506,0.6000,0.7753,0.2679,True
+0,RawDeltaKNN,baseline,True,False,False,0.7287,0.5876,0.6981,0.8019,0.9877,0.2000,0.5938,0.6019,True
+0,TranslationNormalizedKNN,baseline,True,False,False,0.4826,0.3382,0.5774,0.8396,0.9753,0.4000,0.6877,0.4396,True
+0,FeatureAwareIdentityBaseline,baseline,False,True,False,nan,nan,nan,1.0000,1.0000,1.0000,1.0000,0.0000,False
+0,RandomIdentityBaseline,baseline,False,False,False,nan,nan,nan,0.5189,0.4938,0.6000,0.5469,-0.0811,False
+0,MLPPositionOnly,learned,True,False,False,0.6159,0.4836,0.5947,0.7642,1.0000,0.0000,0.5000,0.7642,True
+0,MLPPositionFeature,learned,True,True,False,0.6586,0.5005,0.6402,0.7642,1.0000,0.0000,0.5000,0.7642,True
+0,ObjectCentricFeatureModel,learned,True,True,True,0.5587,0.2923,0.4996,0.7642,1.0000,0.0000,0.5000,0.7642,True
