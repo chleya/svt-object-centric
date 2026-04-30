@@ -52,10 +52,10 @@ svt_agents/
     learned_object_file.py   # Learned hybrid models
     counterfactual_object_file.py      # Counterfactual training + SMH
     probabilistic_structure_object_file.py  # Probabilistic structure selection
-    slot_attention_model.py  # Published model adapters
-    rims_model.py
-    savi_model.py
-    dinosaur_model.py
+    slot_attention_model.py  # Published model adapters (experimental)
+    rims_model.py            # Published model adapters (experimental)
+    savi_model.py            # Published model adapters (experimental)
+    dinosaur_model.py        # Published model adapters (experimental)
   scripts/                   # Experiment runners
     run_current_main.py      # Current main diagnostic (v4.2 + v5.1)
     run_svt_v4_2_conflict_first_object_file.py
@@ -99,6 +99,8 @@ This will:
 2. Run scaling sanity audits
 3. Output results to `results/svt_v4_2_conflict_first_object_file/` and `results/svt_v5_1_scaling_sanity_audit/`
 
+> Note: The current main pipeline may take significant time to complete. A lightweight `smoke-current` script is planned (optional — run individual experiments above for faster iteration).
+
 ### Individual Experiments
 
 ```bash
@@ -134,10 +136,12 @@ Runs the legacy k-NN retrieval attack and oracle upper bound for quick sanity ch
 If you use this framework, please cite:
 
 ```bibtex
-@article{svt_object_centric,
+@misc{svt_object_centric,
   title={From Feature Matching to Object Files: Stress-Testing Identity Binding in Agents},
   author={[Authors]},
-  year={2026}
+  year={2026},
+  howpublished={\url{https://github.com/chleya/svt-object-centric}},
+  note={Work in progress}
 }
 ```
 
