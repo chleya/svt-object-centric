@@ -150,6 +150,28 @@ Inspired by the Neural Stage finding that counterfactual training is the stronge
 
 **Implication**: This negative result identifies a fundamental architectural limitation: MLP-based binding networks lack the structural capacity for conditional identity adjudication. This points toward graph-structured architectures (e.g., differentiable object-relation graphs with learned edge weights) as a necessary substrate for genuine object-file identity binding.
 
+### 4.6 Graph-Structured ObjectFile: S4 Substrate
+
+Following the implication of Section 4.5, we implement a Graph-Structured ObjectFile based on the S4 (differentiable graph) substrate from the R4 specification. The key architectural difference from MLP binding is that edge weights are functions of both endpoint nodes, allowing the model to learn conditional dependencies.
+
+**Architecture**: Each object is a node with feature and trajectory embeddings. Edges between future and observed objects carry learned relation-type weights (feature-based, trajectory-based, conflict). Message passing aggregates information through edges before identity assignment.
+
+**Structural fingerprint comparison:**
+
+| Configuration | Readability | Causality | Swap Accuracy | State |
+|--------------|-------------|-----------|---------------|-------|
+| GraphObjectFile (3 relation types) | 0.658 | 0.158 | 1.000 | **D (Causal)** |
+| GraphObjectFile (2 relation types) | 0.500 | 0.000 | 0.989 | A (Not Readable) |
+| GraphObjectFile (1 relation type) | 0.500 | 0.000 | 1.000 | A (Not Readable) |
+
+**Key finding**: The GraphObjectFile with 3 relation types is the first learned model to achieve State D (identity is causally used) at the intermediate representation level. The edge weight distribution shows the model learns to allocate different weights to different relation types:
+
+- Feature-based edge: 0.573
+- Trajectory-based edge: 0.278
+- Conflict edge: 0.150
+
+Critically, models with fewer than 3 relation types degenerate to State A — they cannot learn conditional identity adjudication without a dedicated conflict relation channel. This confirms that the S4 substrate requires sufficient structural richness (at least 3 relation types) to enable conditional identity binding.
+
 ---
 
 ## 5. Results Summary
@@ -175,6 +197,15 @@ Inspired by the Neural Stage finding that counterfactual training is the stronge
 | DINOSAUR | 1.000 | 1.000 | 0.000 | feature-reader |
 
 All four published models show the same feature-reader profile as our FeatureOnly baseline, confirming that the structural deficiency is not specific to our models but is a property of current object-centric architectures.
+
+### 5.3 Substrate Comparison (Subspace Intervention)
+
+| Substrate | Architecture | Readability | Causality | State |
+|-----------|-------------|-------------|-----------|-------|
+| S1 (Flat predictor) | MLP binding | 1.000 | 0.500 | D (trivial, from logits) |
+| S2 (Flat + edit pressure) | MLP + CF training | 0.515 | 0.015 | A |
+| **S4 (Differentiable graph)** | **GraphObjectFile (3 rel)** | **0.658** | **0.158** | **D (genuine)** |
+| S4 (insufficient structure) | GraphObjectFile (1-2 rel) | 0.500 | 0.000 | A |
 
 ---
 
@@ -218,6 +249,18 @@ The negative result in Section 4.5 is important because it rules out a natural s
 This is not a training bug (we verified with clean-masked counterfactual pressures on non-swap episodes only). It is an architectural limitation: MLP-based pairwise binding networks cannot learn conditional identity adjudication. They can learn "always follow feature" or "always follow trajectory," but not "follow feature when it agrees with trajectory, but follow trajectory when they conflict."
 
 This finding connects to the R4 substrate ladder from the Relation-Internalization program: MLP binding corresponds to S1 (flat predictor) or S2 (flat + edit pressure), which cannot achieve genuine structural capacity. The next step requires S3 (relation slot) or S4 (differentiable graph) architectures that have explicit structural components for conditional adjudication.
+
+### 6.6 The S4 Substrate Enables Conditional Identity Binding
+
+The GraphObjectFile result (Section 4.6) provides the first positive evidence that graph-structured architectures can achieve genuine identity binding. Three findings are particularly important:
+
+1. **State D is achievable**: The GraphObjectFile with 3 relation types reaches State D (identity is causally used), which no MLP-based model achieves at the intermediate representation level.
+
+2. **Structural richness is necessary**: GraphObjectFile with 1 or 2 relation types degenerates to State A, identical to MLP binding. The model needs at least 3 relation types (feature, trajectory, conflict) to learn conditional adjudication.
+
+3. **Edge weights encode conditional dependencies**: The learned edge weight distribution (feature: 0.573, trajectory: 0.278, conflict: 0.150) shows the model allocates different weights to different relation types, which is the mechanism for conditional identity binding.
+
+This confirms the R4 substrate ladder prediction: S4 (differentiable graph with sufficient structural richness) is the minimum substrate for genuine structural capacity.
 
 ---
 
