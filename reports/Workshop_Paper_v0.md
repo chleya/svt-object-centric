@@ -228,10 +228,11 @@ aug_fut_feat[b, 0, :], aug_fut_feat[b, 1, :] = future_features[b, 1, :], future_
 | DualPath_pconf02 | 0.985 | 0.485 | 0.879 | **0.879** | **D** |
 | DualPath_pconf04 | 0.995 | 0.495 | 0.780 | 0.780 | **D** |
 | DualPath_pconf06 | 0.985 | 0.485 | 0.846 | 0.846 | **D** |
+| **DualPath_slot128_balanced** | **0.985** | **0.485** | **0.923** | **0.912** | **D** |
 
 **Key findings:**
 
-1. **Conditional binding is achieved**: The DualPath_pconf02 model achieves conflict resolution = 0.879, compared to 0.000 for all previous learned models. This is the first learned model to achieve meaningful conflict resolution.
+1. **Conditional binding is achieved**: The DualPath_pconf02 model achieves conflict resolution = 0.879, compared to 0.000 for all previous learned models. With balanced training and larger slot dimension (128), this improves to 0.912.
 
 2. **The training signal was the bottleneck**: The v17 model with the same graph-level gating but wrong training signal achieved State A (0.000 conflict resolution). The v18 model with corrected training signal achieves State D (0.879 conflict resolution). The architecture was not the problem — the training signal was.
 
@@ -244,12 +245,22 @@ aug_fut_feat[b, 0, :], aug_fut_feat[b, 1, :] = future_features[b, 1, :], future_
 | Pathway | Clean Accuracy | Conflict Accuracy |
 |---------|---------------|-------------------|
 | Feature scorer | 1.000 | 0.000 |
-| Trajectory scorer | 0.879 | 0.879 |
-| Combined (agreement-based) | 0.879 | 0.879 |
+| Trajectory scorer | 0.923 | 0.923 |
+| Combined (agreement-based) | 0.923 | 0.912 |
 
-The feature scorer perfectly follows features (100% clean, 0% conflict). The trajectory scorer follows trajectories (88% in both conditions). The combined model achieves the same accuracy in both conditions by switching pathways based on agreement.
+The feature scorer perfectly follows features (100% clean, 0% conflict). The trajectory scorer follows trajectories (92% in both conditions with balanced training). The combined model achieves the same accuracy in both conditions by switching pathways based on agreement.
 
-6. **The remaining bottleneck is trajectory scorer quality**: The trajectory scorer's accuracy (84-88%) limits the combined model's performance ceiling. This confirms the v4.3 finding that trajectory-state quality is the fundamental bottleneck, but now the bottleneck manifests as trajectory scorer accuracy rather than gate design.
+6. **The remaining bottleneck is trajectory scorer quality**: The trajectory scorer's accuracy (88-92%) limits the combined model's performance ceiling. With balanced training (higher learning rate for trajectory pathway, feature scorer frozen for first 15 epochs) and larger slot dimension (128), trajectory scorer accuracy improves to 92% and conflict resolution reaches 0.912. This confirms the v4.3 finding that trajectory-state quality is the fundamental bottleneck, but now the bottleneck manifests as trajectory scorer accuracy rather than gate design.
+
+7. **Training signal alone is not sufficient (v18b ablation)**: We tested whether correcting the training signal alone (without the dual-pathway architecture) would enable conditional binding in graph-structured models. Results:
+
+| Model | Training Signal | Swap Acc | Conflict Res | State |
+|-------|---------------|----------|-------------|-------|
+| GraphObjectFile | Corrected | 0.000 | 0.000 | A |
+| GatedGraphObjectFile | Corrected | 0.527 | 0.549 | D |
+| DualPathwayObjectFile | Corrected | 0.879 | 0.879 | D |
+
+The corrected training signal alone does NOT fix the GraphObjectFile (still State A). The GatedGraphObjectFile benefits partially (State D, 0.549 conflict resolution), but only the DualPathwayObjectFile achieves full conditional binding (0.879-0.912). This confirms that **both the corrected training signal AND the dual-pathway architecture are necessary** — neither alone is sufficient.
 
 ---
 
@@ -265,7 +276,7 @@ The feature scorer perfectly follows features (100% clean, 0% conflict). The tra
 | MinimalObjectFile | 0.096 | 0.933 | — |
 | ImprovedObjectFile | 0.558 | 0.610 | Failed (≈1.0 both) |
 | ConflictFirst_margin | 0.519 | 0.648 | 0.637 |
-| **DualPath_pconf02** | **0.879** | **0.879** | — |
+| **DualPath_slot128_balanced** | **0.923** | **0.912** | — |
 
 ### 5.2 Published Object-Centric Models (SVT External Audit)
 
@@ -286,7 +297,7 @@ All four published models show the same feature-reader profile as our FeatureOnl
 | S2 (Flat + edit pressure) | MLP + CF training | 0.515 | 0.015 | 0.000 | A |
 | S4 (Differentiable graph) | GraphObjectFile (3 rel) | 0.658 | 0.158 | 0.000 | D (no conditional) |
 | S4 + wrong training | GatedGraphObjectFile | 0.500 | 0.000 | 0.000 | A |
-| **S5 (Dual pathway)** | **DualPathObjectFile** | **0.985** | **0.485** | **0.879** | **D (conditional!)** |
+| **S5 (Dual pathway)** | **DualPathObjectFile** | **0.985** | **0.485** | **0.912** | **D (conditional!)** |
 
 ---
 

@@ -205,7 +205,6 @@ class GatedGraphObjectFile(nn.Module):
                     elif aug_fut_feat.dim() == 3:
                         aug_fut_feat[b, 0, :], aug_fut_feat[b, 1, :] = \
                             future_features[b, 1, :].clone(), future_features[b, 0, :].clone()
-                    aug_identity[b, 0], aug_identity[b, 1] = identity_labels[b, 1].clone(), identity_labels[b, 0].clone()
                     conflict_labels[b] = 1.0
 
         z_obs, z_obs_feat, z_obs_traj, z_fut, z_fut_feat, z_fut_traj = \
