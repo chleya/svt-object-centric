@@ -122,7 +122,7 @@ To test whether the feature-reader profile is specific to our models or general 
 | SAVi | 1.000 | 1.000 | 0.000 | 0.000 | 0.561 | feature-reader |
 | DINOSAUR | 1.000 | 1.000 | 0.000 | 0.000 | 0.561 | feature-reader |
 
-**Key finding**: All four tested object-centric models exhibit a feature-reader-like profile. They achieve perfect identity accuracy under clean conditions, but completely fail (0.000) under feature-trajectory conflict. This is identical to the FeatureOnly baseline profile.
+**Key finding**: All four tested object-centric models exhibit a feature-reader-like profile. They achieve perfect identity accuracy under clean conditions, but completely fail (0.000) under feature-trajectory conflict. This is identical to the FeatureOnly baseline profile. This finding is robust across 3 random seeds (std = 0.000 for all metrics), confirming that it is not an artifact of train/test randomness.
 
 **Interpretation**: The feature-reader profile is not specific to our models. It is a property of current object-centric architectures that learn to associate features with object slots without maintaining a separate trajectory-continuity channel. When features are misleading, these models have no adjudication mechanism and are completely misled.
 

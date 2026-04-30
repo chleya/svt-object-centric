@@ -37,6 +37,27 @@ These stages probe specific boundary conditions and scaling properties:
 | **v5** Scaling up | Larger datasets, more complex dynamics — preliminary scaling check (not a full verification) |
 | **v5.1** Scaling sanity audit | Conflict construction audit, permutation metric audit, continuous feature oracle — hardens the metric itself |
 
+## External Audit: Published Object-Centric Models
+
+We apply SVT stress tests to four published object-centric models. All four exhibit a **feature-reader-like profile**: perfect clean accuracy but complete failure under feature-trajectory conflict.
+
+| Model | Clean | Feature Ablation | Conflict | Profile |
+|-------|-------|-----------------|----------|---------|
+| Slot Attention | 1.000 | 0.000 | 0.000 | feature-reader |
+| RIMs | 1.000 | 1.000 | 0.000 | feature-reader |
+| SAVi | 1.000 | 1.000 | 0.000 | feature-reader |
+| DINOSAUR | 1.000 | 1.000 | 0.000 | feature-reader |
+
+Results are consistent across 3 random seeds (std = 0.000 for all metrics).
+
+```bash
+# Run external audit (all 4 models)
+python scripts/run_external_audit_v1.py
+
+# Run multi-seed replication (3 seeds)
+python scripts/run_external_audit_v1_1_multiseed.py
+```
+
 ## Legacy Experiments: v2 k-NN Attack
 
 The v2 experiments (k-NN retrieval attack) remain available as legacy demonstrations of non-structural baseline performance. They show that apparent structure can often be explained by retrieval and interpolation.
@@ -125,6 +146,7 @@ Runs the legacy k-NN retrieval attack and oracle upper bound for quick sanity ch
 - Clean feature matching can read out identity under benign conditions, but this does not constitute an object-file mechanism.
 - Weighted hybrid fusion is insufficient for conflict resolution; explicit conflict detection + adjudication is necessary.
 - The remaining bottleneck in learned models is trajectory-state quality, not gate design.
+- All four tested published object-centric models (Slot Attention, RIMs, SAVi, DINOSAUR) exhibit a feature-reader-like profile under SVT stress tests.
 
 **We do NOT claim:**
 - Object permanence is solved.
