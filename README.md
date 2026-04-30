@@ -34,7 +34,7 @@ These stages probe specific boundary conditions and scaling properties:
 | Stage | Focus |
 |-------|-------|
 | **v4.3** Trajectory robustness | Approach detection, trajectory augmentation — negative result: diminishing returns on gate heuristics |
-| **v5** Scaling up | Larger datasets, more complex dynamics — verifies that v4.2 findings are not small-sample artifacts |
+| **v5** Scaling up | Larger datasets, more complex dynamics — preliminary scaling check (not a full verification) |
 | **v5.1** Scaling sanity audit | Conflict construction audit, permutation metric audit, continuous feature oracle — hardens the metric itself |
 
 ## Legacy Experiments: v2 k-NN Attack
