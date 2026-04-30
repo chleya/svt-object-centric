@@ -31,9 +31,17 @@ Each relation has:
 
 ## 3. Next Stage: Relation-Specific ObjectFile
 
-Each relation should be treated as a first-class entity with its own state, uncertainty, update rule, and failure mode.
+### 3.0 v14 Finding: MLP Binding Cannot Do Conditional Adjudication
 
-### 3.1 Relation-Specific Uncertainty
+The v14 experiment (counterfactual training with clean masking) produced a critical negative result: counterfactual training completely destroys identity encoding in MLP-based binding networks. This means:
+
+- MLP pairwise matching (current ObjectFile) corresponds to R4 substrate S1/S2
+- S1/S2 cannot achieve conditional identity binding ("follow feature when it agrees, follow trajectory when it conflicts")
+- The next architectural step requires S3 (relation slot) or S4 (differentiable graph)
+
+**Implication**: Before implementing relation-specific inspection, we need a substrate that can represent conditional dependencies. The current MLP binding is too flat.
+
+### 3.1 Relations Already Present in Current ObjectFile
 
 Current ObjectFile uses a single blanket confidence score. This is insufficient because:
 

@@ -128,6 +128,28 @@ To test whether the feature-reader profile is specific to our models or general 
 
 **Notable difference**: RIMs, SAVi, and DINOSAUR maintain perfect accuracy under feature ablation (features removed entirely), while Slot Attention drops to 0.000. This suggests that RIMs/SAVi/DINOSAUR learn trajectory information in their recurrent state, but this trajectory information is not used for adjudication when features are present but misleading — it is only used as a fallback when features are absent.
 
+### 4.5 Negative Result: Counterfactual Training Destroys Identity Encoding
+
+Inspired by the Neural Stage finding that counterfactual training is the strongest pressure for relation internalization (gated_score ~0.981 vs edit-pressure ~0.200), we attempted to apply counterfactual training to the ObjectFile architecture. The training applies three simultaneous pressures on clean (non-swap) episodes only:
+
+1. **Invariance**: identity should not change under nuisance perturbations (position noise)
+2. **Sensitivity**: when features are artificially swapped, identity should follow trajectory
+3. **Counterfactual**: when trajectory is artificially swapped, identity should follow the swapped trajectory
+
+**Result**: Counterfactual training completely destroys identity encoding, regardless of whether the clean-mask fix is applied:
+
+| Configuration | Readability | Swap Accuracy | State |
+|--------------|-------------|---------------|-------|
+| Baseline (no CF) | 1.000 | 1.000 | D (trivial) |
+| SMH-only | 1.000 | 1.000 | D (trivial) |
+| CF-only (clean-masked) | 0.515 | 0.132 | A |
+| SMH + CF (clean-masked) | 0.536 | 0.011 | A |
+| Strong SMH + CF | 0.495 | 0.044 | A |
+
+**Why it fails**: The current binding architecture (MLP pairwise matching) cannot learn conditional identity binding — the ability to "follow both channels when they agree, but follow trajectory when they conflict." The sensitivity and counterfactual losses require the model to flip identity when one channel is swapped, but the identity loss requires it to maintain identity when neither is swapped. An MLP cannot simultaneously satisfy these conditional requirements.
+
+**Implication**: This negative result identifies a fundamental architectural limitation: MLP-based binding networks lack the structural capacity for conditional identity adjudication. This points toward graph-structured architectures (e.g., differentiable object-relation graphs with learned edge weights) as a necessary substrate for genuine object-file identity binding.
+
 ---
 
 ## 5. Results Summary
@@ -188,6 +210,14 @@ The external audit (Section 4.4) extends the feature-reader finding from our own
 3. **It is about architectural structure**: RIMs, SAVi, and DINOSAUR maintain trajectory information (feature ablation = 1.000), but this information is not used for adjudication when features are present but misleading. The trajectory channel exists but is not connected to a conflict-resolution mechanism.
 
 4. **It validates the SVT approach**: The fact that all four models show the same profile under stress — despite their architectural differences — suggests that SVT is probing a real structural property, not an artifact of the test.
+
+### 6.5 Counterfactual Training Cannot Fix the Architecture
+
+The negative result in Section 4.5 is important because it rules out a natural solution: "if the model doesn't learn conflict resolution from normal training, maybe counterfactual training can force it." We show that counterfactual training — the strongest pressure for relation internalization in the Neural Stage experiments — completely destroys identity encoding when applied to the ObjectFile architecture.
+
+This is not a training bug (we verified with clean-masked counterfactual pressures on non-swap episodes only). It is an architectural limitation: MLP-based pairwise binding networks cannot learn conditional identity adjudication. They can learn "always follow feature" or "always follow trajectory," but not "follow feature when it agrees with trajectory, but follow trajectory when they conflict."
+
+This finding connects to the R4 substrate ladder from the Relation-Internalization program: MLP binding corresponds to S1 (flat predictor) or S2 (flat + edit pressure), which cannot achieve genuine structural capacity. The next step requires S3 (relation slot) or S4 (differentiable graph) architectures that have explicit structural components for conditional adjudication.
 
 ---
 
