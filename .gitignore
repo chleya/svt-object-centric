@@ -17,3 +17,6 @@ results/**/*.csv
 results/**/*.json
 *.npz
 checkpoints/*.pt
+
+# Temporary scratch files
+新建文本文档*.md
