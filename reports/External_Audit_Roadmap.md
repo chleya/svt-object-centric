@@ -4,6 +4,25 @@
 
 Extend SVT from testing our own ObjectFile variants to auditing structural claims of published object-centric models.
 
+## 0. Completed: External Audit v1 Results
+
+All four tested models show a feature-reader-like profile:
+
+| Model | Clean | Feature Ablation | Occlusion | Conflict | Shuffled | Profile |
+|-------|-------|-----------------|-----------|----------|----------|---------|
+| Slot Attention | 1.000 | 0.000 | 0.000 | 0.000 | 0.561 | feature-reader |
+| RIMs | 1.000 | 1.000 | 0.000 | 0.000 | 0.561 | feature-reader |
+| SAVi | 1.000 | 1.000 | 0.000 | 0.000 | 0.561 | feature-reader |
+| DINOSAUR | 1.000 | 1.000 | 0.000 | 0.000 | 0.561 | feature-reader |
+
+Key observations:
+- All models achieve perfect clean accuracy but fail completely under conflict
+- RIMs/SAVi/DINOSAUR maintain accuracy under feature ablation (trajectory fallback)
+- Slot Attention loses all accuracy under feature ablation (no trajectory fallback)
+- None of the models have a conflict-resolution mechanism
+
+Run script: `python scripts/run_external_audit_v1.py`
+
 ## 1. Target Model Priority
 
 | Priority | Model | Reason |

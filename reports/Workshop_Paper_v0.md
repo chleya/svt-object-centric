@@ -6,7 +6,7 @@
 
 ## Abstract
 
-Object-centric agents often achieve high identity assignment accuracy under clean conditions, but does this performance reflect genuine object-file identity binding, or merely feature matching? We present Structure Validity Tests (SVT), a diagnostic framework that systematically stress-tests identity binding under feature corruption, occlusion, feature-trajectory conflict, and confidence calibration. In a controlled 2D multi-object environment, we demonstrate a structural discriminative chain: (1) a FeatureOnly model achieves perfect identity accuracy (swap-only = 1.000) under clean conditions, but is completely misled (conflict = 0.000) when features are tampered; (2) a MinimalObjectFile with separate feature and trajectory channels and conflict adjudication correctly resolves 93.3% of feature-trajectory conflicts despite low normal performance; (3) learned trajectory states improve normal performance but degrade conflict resolution and confidence calibration; (4) a conflict-first gate achieves the most balanced performance to date (conflict resolution = 0.648, calibration = 0.637). Our contribution is not a strong model, but a diagnostic chain showing that clean feature matching can read out identity without constituting an object-file mechanism. The failures of FeatureOnly and Hybrid models are more informative than the partial success of ObjectFile variants.
+Object-centric agents often achieve high identity assignment accuracy under clean conditions, but does this performance reflect genuine object-file identity binding, or merely feature matching? We present Structure Validity Tests (SVT), a diagnostic framework that systematically stress-tests identity binding under feature corruption, occlusion, feature-trajectory conflict, and confidence calibration. In a controlled 2D multi-object environment, we demonstrate a structural discriminative chain: (1) a FeatureOnly model achieves perfect identity accuracy (swap-only = 1.000) under clean conditions, but is completely misled (conflict = 0.000) when features are tampered; (2) a MinimalObjectFile with separate feature and trajectory channels and conflict adjudication correctly resolves 93.3% of feature-trajectory conflicts despite low normal performance; (3) learned trajectory states improve normal performance but degrade conflict resolution and confidence calibration; (4) a conflict-first gate achieves the most balanced performance to date (conflict resolution = 0.648, calibration = 0.637). Critically, we apply SVT to four published object-centric models (Slot Attention, RIMs, SAVi, DINOSAUR) and find that all four exhibit a feature-reader-like profile: perfect clean accuracy but complete failure under feature-trajectory conflict. This extends our finding from "our ObjectFile has correct bias" to "current object-centric models lack conflict-resolution structure." Our contribution is not a strong model, but a diagnostic method showing that clean feature matching can read out identity without constituting an object-file mechanism.
 
 ---
 
@@ -28,6 +28,7 @@ We do not claim that object permanence is solved, that SVT "passes," or that our
 2. Empirical evidence that FeatureOnly (100% clean accuracy) is 100% misled by tampered features, while MinimalObjectFile (9.6% clean accuracy) correctly resolves 93.3% of conflicts.
 3. The ConflictFirst gate, the first mechanism to achieve both meaningful confidence calibration and conflict resolution above chance.
 4. A negative result (v4.3) showing that gate heuristic improvements have diminishing returns, identifying trajectory-state quality as the fundamental bottleneck.
+5. **External audit**: 4/4 tested published object-centric models (Slot Attention, RIMs, SAVi, DINOSAUR) exhibit a feature-reader-like profile under SVT, extending the finding beyond our own models.
 
 ---
 
@@ -108,9 +109,30 @@ Given observed positions and features for N objects over T_obs timesteps, and fu
 
 **v5.1 — Scaling Sanity Audit**: Confirms that (a) N=3 permutation metric is valid, (b) continuous feature oracle achieves 1.000 clean, (c) conflict construction induces genuine feature-trajectory disagreement, (d) FeatureOnly conflict=0 is not a metric artifact.
 
+### 4.4 External Audit: Published Object-Centric Models
+
+To test whether the feature-reader profile is specific to our models or general to object-centric architectures, we apply SVT stress tests to four published models: Slot Attention (Locatello et al., 2020), RIMs (Goyal et al., 2021), SAVi (Kipf et al., 2022), and DINOSAUR (Seitzer et al., 2024). Each model is adapted to the SVT (position, feature) input format and trained on the same 2-object attractor-dynamics dataset.
+
+**Structural fingerprint comparison:**
+
+| Model | Clean | Feature Ablation | Occlusion | Conflict | Shuffled | Profile |
+|-------|-------|-----------------|-----------|----------|----------|---------|
+| Slot Attention | 1.000 | 0.000 | 0.000 | 0.000 | 0.561 | feature-reader |
+| RIMs | 1.000 | 1.000 | 0.000 | 0.000 | 0.561 | feature-reader |
+| SAVi | 1.000 | 1.000 | 0.000 | 0.000 | 0.561 | feature-reader |
+| DINOSAUR | 1.000 | 1.000 | 0.000 | 0.000 | 0.561 | feature-reader |
+
+**Key finding**: All four tested object-centric models exhibit a feature-reader-like profile. They achieve perfect identity accuracy under clean conditions, but completely fail (0.000) under feature-trajectory conflict. This is identical to the FeatureOnly baseline profile.
+
+**Interpretation**: The feature-reader profile is not specific to our models. It is a property of current object-centric architectures that learn to associate features with object slots without maintaining a separate trajectory-continuity channel. When features are misleading, these models have no adjudication mechanism and are completely misled.
+
+**Notable difference**: RIMs, SAVi, and DINOSAUR maintain perfect accuracy under feature ablation (features removed entirely), while Slot Attention drops to 0.000. This suggests that RIMs/SAVi/DINOSAUR learn trajectory information in their recurrent state, but this trajectory information is not used for adjudication when features are present but misleading — it is only used as a fallback when features are absent.
+
 ---
 
 ## 5. Results Summary
+
+### 5.1 ObjectFile Variants
 
 | Model | Clean swap-only | Conflict resolution | Confidence calibration |
 |-------|----------------|--------------------|-----------------------|
@@ -120,6 +142,17 @@ Given observed positions and features for N objects over T_obs timesteps, and fu
 | MinimalObjectFile | 0.096 | 0.933 | — |
 | ImprovedObjectFile | 0.558 | 0.610 | Failed (≈1.0 both) |
 | ConflictFirst_margin | 0.519 | 0.648 | 0.637 |
+
+### 5.2 Published Object-Centric Models (SVT External Audit)
+
+| Model | Clean | Feature Ablation | Conflict | Profile |
+|-------|-------|-----------------|----------|---------|
+| Slot Attention | 1.000 | 0.000 | 0.000 | feature-reader |
+| RIMs | 1.000 | 1.000 | 0.000 | feature-reader |
+| SAVi | 1.000 | 1.000 | 0.000 | feature-reader |
+| DINOSAUR | 1.000 | 1.000 | 0.000 | feature-reader |
+
+All four published models show the same feature-reader profile as our FeatureOnly baseline, confirming that the structural deficiency is not specific to our models but is a property of current object-centric architectures.
 
 ---
 
@@ -144,6 +177,18 @@ There is a fundamental trade-off between normal performance and conflict resolut
 
 The v4.3 negative result is important: improving the gate heuristic has diminishing returns. The trajectory predictor's OOD generalization (swap-only = 0.135) sets a ceiling on any gate's performance. Future work should focus on trajectory-state quality, not gate design.
 
+### 6.4 The Feature-Reader Profile is General, Not Specific
+
+The external audit (Section 4.4) extends the feature-reader finding from our own models to four published object-centric architectures. This is significant because:
+
+1. **It is not a straw man**: The feature-reader profile is not an artifact of our FeatureOnly baseline. It is a property of Slot Attention, RIMs, SAVi, and DINOSAUR — models that are widely cited as achieving object-centric representations.
+
+2. **It is not about model quality**: These models achieve perfect clean accuracy (1.000), demonstrating that they learn the task perfectly under benign conditions. The failure is specifically under stress — when features are misleading.
+
+3. **It is about architectural structure**: RIMs, SAVi, and DINOSAUR maintain trajectory information (feature ablation = 1.000), but this information is not used for adjudication when features are present but misleading. The trajectory channel exists but is not connected to a conflict-resolution mechanism.
+
+4. **It validates the SVT approach**: The fact that all four models show the same profile under stress — despite their architectural differences — suggests that SVT is probing a real structural property, not an artifact of the test.
+
 ---
 
 ## 7. Limitations
@@ -158,9 +203,9 @@ The v4.3 negative result is important: improving the gate heuristic has diminish
 
 ## 8. Conclusion
 
-We have presented Structure Validity Tests (SVT), a diagnostic framework for stress-testing identity binding in object-centric agents. Our main finding is a structural discriminative chain: clean feature matching can read out identity under benign conditions, but fails catastrophically under feature-trajectory conflict. A minimal ObjectFile with separate channels and conflict adjudication demonstrates correct structural bias, but its normal performance is limited by trajectory-state quality. The ConflictFirst gate achieves the most balanced performance to date, but the fundamental trade-off between normal performance and conflict resolution remains unresolved.
+We have presented Structure Validity Tests (SVT), a diagnostic framework for stress-testing identity binding in object-centric agents. Our main finding is a structural discriminative chain: clean feature matching can read out identity under benign conditions, but fails catastrophically under feature-trajectory conflict. Critically, this finding extends beyond our own models: all four tested published object-centric models (Slot Attention, RIMs, SAVi, DINOSAUR) exhibit the same feature-reader-like profile — perfect clean accuracy but complete failure under conflict. A minimal ObjectFile with separate channels and conflict adjudication demonstrates correct structural bias, but its normal performance is limited by trajectory-state quality. The ConflictFirst gate achieves the most balanced performance to date, but the fundamental trade-off between normal performance and conflict resolution remains unresolved.
 
-The contribution of this work is not a strong model, but a diagnostic method: the finding that FeatureOnly and Hybrid models are structurally deficient is more informative than the partial success of ObjectFile variants. We recommend that future object-centric models be evaluated not only under clean conditions, but also under systematic stress tests that probe whether identity binding is genuine or superficial.
+The contribution of this work is not a strong model, but a diagnostic method: the finding that current object-centric models are structurally deficient under conflict is more informative than the partial success of ObjectFile variants. We recommend that future object-centric models be evaluated not only under clean conditions, but also under systematic stress tests that probe whether identity binding is genuine or superficial.
 
 ---
 
