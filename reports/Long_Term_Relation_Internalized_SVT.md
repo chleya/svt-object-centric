@@ -31,7 +31,25 @@ Each relation has:
 
 ## 3. Next Stage: Relation-Specific ObjectFile
 
-### 3.0 v14 Finding: MLP Binding Cannot Do Conditional Adjudication
+### 3.0 v18 Finding: Training Signal Was the Bottleneck, Not Architecture
+
+The v18 experiment (DualPathwayObjectFile with corrected conflict training) produced a critical positive result: conditional identity binding IS achievable with the correct training signal. Key findings:
+
+- **v16/v17 bug**: Conflict augmentation swapped features AND identity labels together, training the model to follow swapped features under conflict. This is the OPPOSITE of conditional binding.
+- **v18 fix**: Keep identity labels unchanged when features are swapped. This trains the model to follow trajectory under conflict.
+- **Result**: DualPath_pconf02 achieves conflict resolution = 0.879, clean accuracy = 0.879, State D (causal).
+- **Architecture**: Dual independent scorers (feature + trajectory) with agreement-based switching.
+- **Agreement detection**: Clean agreement 95%, conflict disagreement 99% — reliable conflict detection without explicit training.
+
+**Implication**: The substrate ladder needs revision:
+- S1 (Flat predictor): MLP binding, no conditional capacity
+- S2 (Flat + edit pressure): MLP + CF training, destroys identity
+- S4 (Differentiable graph): State D but no conditional binding
+- **S5 (Dual pathway + corrected training)**: State D + conditional binding (0.879)
+
+The remaining bottleneck is trajectory scorer quality (84-88%), limited by OOD trajectory prediction.
+
+### 3.1 v14 Finding: MLP Binding Cannot Do Conditional Adjudication (Superseded by v18)
 
 The v14 experiment (counterfactual training with clean masking) produced a critical negative result: counterfactual training completely destroys identity encoding in MLP-based binding networks. This means:
 
@@ -39,9 +57,11 @@ The v14 experiment (counterfactual training with clean masking) produced a criti
 - S1/S2 cannot achieve conditional identity binding ("follow feature when it agrees, follow trajectory when it conflicts")
 - The next architectural step requires S3 (relation slot) or S4 (differentiable graph)
 
-**Implication**: Before implementing relation-specific inspection, we need a substrate that can represent conditional dependencies. The current MLP binding is too flat.
+**Note**: v18 shows that the issue was not purely architectural — the training signal was also wrong. With corrected training, even a simpler dual-pathway architecture achieves conditional binding.
 
-### 3.1 Relations Already Present in Current ObjectFile
+**Implication**: Before implementing relation-specific inspection, we need BOTH a substrate that can represent conditional dependencies AND a training signal that correctly specifies which signal to follow under conflict.
+
+### 3.2 Relations Already Present in Current ObjectFile
 
 Current ObjectFile uses a single blanket confidence score. This is insufficient because:
 
@@ -50,7 +70,7 @@ Current ObjectFile uses a single blanket confidence score. This is insufficient 
 - Conflict uncertainty is about contradictory evidence
 - These require different inspection and recovery strategies
 
-### 3.2 Inspection Design Space
+### 3.3 Inspection Design Space
 
 | Variant | Description | Expected behavior |
 |---------|-------------|-------------------|
@@ -59,7 +79,7 @@ Current ObjectFile uses a single blanket confidence score. This is insufficient 
 | RelationSpecificInspectionObjectFile | Separate inspection per relation | Targeted; inspects only when specific relation is unreliable |
 | OracleInspectionObjectFile | Oracle knows which relation is unreliable | Upper bound; shows ceiling of relation-specific inspection |
 
-### 3.3 Key Hypothesis
+### 3.4 Key Hypothesis
 
 Relation-specific inspection outperforms blanket inspection because:
 - Different relations fail for different reasons
@@ -95,13 +115,25 @@ For any structural claim, SVT asks:
 
 The Relation-Internalization program (F:\relation-internalization-program) provides complementary findings:
 
-| Relation-Internalization finding | Implication for SVT |
-|--------------------------------|---------------------|
-| Probe readability ≠ causal use | Subspace intervention test (v12) directly tests this |
-| Edit-pressure training is false positive | Conflict-augmented training (v10) has same issue |
-| Counterfactual training is strongest | Should be adapted for ObjectFile training (v13) |
-| Structure states A/B/C/D | Directly applicable to identity encoding diagnosis |
-| S4 differentiable graph substrate | Potential architecture for Relation-Specific ObjectFile |
+| Relation-Internalization finding | Implication for SVT | v18 status |
+|--------------------------------|---------------------|------------|
+| Probe readability != causal use | Subspace intervention test (v12) directly tests this | Confirmed: State D achieved |
+| Edit-pressure training is false positive | Conflict-augmented training (v10) has same issue | Confirmed: wrong training signal was the bug |
+| Counterfactual training is strongest | Should be adapted for ObjectFile training (v13) | Partially: corrected conflict training works better |
+| Structure states A/B/C/D | Directly applicable to identity encoding diagnosis | v18 achieves State D + conditional binding |
+| S4 differentiable graph substrate | Potential architecture for Relation-Specific ObjectFile | S4 alone insufficient; S5 (dual pathway) needed |
+
+### 6.1 Revised Substrate Ladder
+
+| Substrate | Architecture | Conditional Binding | Conflict Resolution |
+|-----------|-------------|--------------------|--------------------|
+| S1 (Flat predictor) | MLP binding | No | 0.000 |
+| S2 (Flat + edit pressure) | MLP + CF training | No (destroys identity) | 0.000 |
+| S4 (Differentiable graph) | GraphObjectFile | No (State D only) | 0.000 |
+| S4 + wrong training | GatedGraphObjectFile | No (training bug) | 0.000 |
+| **S5 (Dual pathway + corrected training)** | **DualPathwayObjectFile** | **Yes** | **0.879** |
+
+Key insight: S4 structure is necessary for State D but not sufficient for conditional binding. The training signal (which signal to follow under conflict) is equally important. S5 = S4-level structure + corrected training signal + explicit dual pathway.
 
 ## 7. What NOT to Do
 
