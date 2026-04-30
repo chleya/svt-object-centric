@@ -172,6 +172,10 @@ Following the implication of Section 4.5, we implement a Graph-Structured Object
 
 Critically, models with fewer than 3 relation types degenerate to State A — they cannot learn conditional identity adjudication without a dedicated conflict relation channel. This confirms that the S4 substrate requires sufficient structural richness (at least 3 relation types) to enable conditional identity binding.
 
+However, a critical follow-up experiment reveals that **State D does not imply conditional identity binding**: when tested under feature-trajectory conflict, the GraphObjectFile's edge weights do not shift between conditions (clean vs. conflict), and conflict resolution accuracy remains at 0.000. The model achieves State D by encoding identity in its representation, but this encoding is not conditionally used — it is always feature-dominated, identical to the feature-reader profile.
+
+Furthermore, conflict-augmented training (p_conflict = 0.2, 0.4) does not induce edge weight shifting. All conflict-augmented configurations remain in State A, with edge weights showing negligible differences between clean and conflict conditions. This suggests that the current edge network architecture (softmax over relation types) does not have sufficient representational capacity for conditional weight modulation.
+
 ---
 
 ## 5. Results Summary
@@ -261,6 +265,10 @@ The GraphObjectFile result (Section 4.6) provides the first positive evidence th
 3. **Edge weights encode conditional dependencies**: The learned edge weight distribution (feature: 0.573, trajectory: 0.278, conflict: 0.150) shows the model allocates different weights to different relation types, which is the mechanism for conditional identity binding.
 
 This confirms the R4 substrate ladder prediction: S4 (differentiable graph with sufficient structural richness) is the minimum substrate for genuine structural capacity.
+
+However, our results also reveal a critical gap: **S4 structure is necessary but not sufficient**. The GraphObjectFile achieves State D (identity is causally used) but does not achieve conditional identity binding (edge weights do not shift under conflict). Conflict-augmented training does not help — the softmax edge network cannot learn to modulate weights conditionally.
+
+This suggests that the next step requires not just graph structure, but **gated graph structure** — edge weights that are explicitly conditioned on a conflict detection signal, similar to the ConflictFirst gate but implemented at the graph level. The conflict detection signal would need to be learned separately (not from the same edge network), providing an independent gating mechanism that can override feature-dominated edge weights when conflict is detected.
 
 ---
 

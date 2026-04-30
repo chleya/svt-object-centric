@@ -184,7 +184,8 @@ class GraphObjectFile(nn.Module):
         return logits, edge_weights, aggregated_fut
 
     def compute_loss(self, observed_positions, future_positions, identity_labels,
-                     observed_features=None, future_features=None, is_swap=None):
+                     observed_features=None, future_features=None, is_swap=None,
+                     p_conflict=0.0):
         if isinstance(observed_positions, np.ndarray):
             observed_positions = torch.FloatTensor(observed_positions)
         if isinstance(future_positions, np.ndarray):
@@ -201,14 +202,32 @@ class GraphObjectFile(nn.Module):
         B = observed_positions.shape[0]
         N = self.num_objects
 
+        aug_fut_feat = future_features
+        aug_identity = identity_labels
+        conflict_labels = torch.zeros(B, device=observed_positions.device)
+
+        if p_conflict > 0 and future_features is not None and N >= 2:
+            aug_fut_feat = future_features.clone()
+            aug_identity = identity_labels.clone()
+            for b in range(B):
+                if torch.rand(1).item() < p_conflict:
+                    if aug_fut_feat.dim() == 4:
+                        aug_fut_feat[b, :, 0, :], aug_fut_feat[b, :, 1, :] = \
+                            future_features[b, :, 1, :].clone(), future_features[b, :, 0, :].clone()
+                    elif aug_fut_feat.dim() == 3:
+                        aug_fut_feat[b, 0, :], aug_fut_feat[b, 1, :] = \
+                            future_features[b, 1, :].clone(), future_features[b, 0, :].clone()
+                    aug_identity[b, 0], aug_identity[b, 1] = identity_labels[b, 1].clone(), identity_labels[b, 0].clone()
+                    conflict_labels[b] = 1.0
+
         z_obs, z_obs_feat, z_obs_traj, z_fut, z_fut_feat, z_fut_traj = \
             self._encode_inputs(observed_positions, observed_features,
-                                future_positions, future_features)
+                                future_positions, aug_fut_feat)
 
         logits, edge_weights, aggregated_fut = self._graph_pass(
             z_obs, z_obs_feat, z_obs_traj, z_fut, z_fut_feat, z_fut_traj)
 
-        identity_loss = F.cross_entropy(logits.reshape(-1, N), identity_labels.reshape(-1))
+        identity_loss = F.cross_entropy(logits.reshape(-1, N), aug_identity.reshape(-1))
 
         smh_logits = torch.zeros(B, N, N, device=z_obs.device)
         for j in range(N):
@@ -222,9 +241,22 @@ class GraphObjectFile(nn.Module):
         pred_traj = torch.stack(traj_preds, dim=2)
         traj_loss = F.mse_loss(pred_traj, future_positions)
 
+        conflict_edge_loss = torch.tensor(0.0, device=observed_positions.device)
+        if p_conflict > 0 and conflict_labels.sum() > 0:
+            conflict_mask = conflict_labels.bool()
+            if conflict_mask.any():
+                clean_mask = ~conflict_mask
+                if clean_mask.any():
+                    conflict_rel2 = edge_weights[conflict_mask, :, :, 2].mean()
+                    clean_rel2 = edge_weights[clean_mask, :, :, 2].mean()
+                    conflict_rel1 = edge_weights[conflict_mask, :, :, 1].mean()
+                    clean_rel1 = edge_weights[clean_mask, :, :, 1].mean()
+                    conflict_edge_loss = -0.1 * (conflict_rel2 - clean_rel2) - 0.1 * (conflict_rel1 - clean_rel1)
+
         total_loss = (self.identity_weight * identity_loss +
                       self.smh_weight * smh_loss +
-                      self.traj_weight * traj_loss)
+                      self.traj_weight * traj_loss +
+                      conflict_edge_loss)
 
         return total_loss, identity_loss, smh_loss, torch.tensor(0.0)
 
