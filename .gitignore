@@ -9,5 +9,11 @@ __pycache__/
 dist/
 build/
 *.log
-*.txt
 .DS_Store
+
+# Large result files (not committed)
+results/**/*.png
+results/**/*.csv
+results/**/*.json
+*.npz
+checkpoints/*.pt
