@@ -274,6 +274,25 @@ The corrected training signal alone does NOT fix the GraphObjectFile (still Stat
 
 This demonstrates that the dual-pathway principle is **not specific to our architecture** — it is a general principle that can be applied to any object-centric model. The key requirements are: (1) a feature-based identity scorer (already present in all models), (2) an independent trajectory-based identity scorer (added as a plugin), and (3) agreement-based switching between the two.
 
+9. **Results are robust across random seeds (v18e)**: We verified the DualPathwayObjectFile and SlotAttention+DualPath across 5 random seeds (42, 123, 456, 789, 2024):
+
+| Model | Conflict Resolution | Swap Accuracy | Robust |
+|-------|-------------------|---------------|--------|
+| DualPathwayObjectFile | 0.766 ± 0.057 | 0.777 ± 0.053 | Yes |
+| SlotAttention+DualPath | 0.839 ± 0.055 | 0.839 ± 0.055 | Yes |
+
+Conditional binding holds across all seeds with standard deviation < 0.06. The feature scorer consistently achieves 100% clean accuracy and 0% conflict accuracy, while the trajectory scorer consistently follows trajectories. The agreement-based switch reliably detects conflict (clean agreement 93%, conflict agreement 2%).
+
+10. **Dual-pathway scales to harder scenarios (v18f)**: We tested under occlusion (30% of objects partially hidden during observation) and 3-object scenarios:
+
+| Scenario | Combined Swap | Combined Conflict | Traj Scorer |
+|----------|-------------|-------------------|-------------|
+| 2 objects, clean | 0.890 | 0.868 | 0.879 |
+| 2 objects, occluded | 0.890 | 0.879 | 0.890 |
+| 3 objects | 0.723 | — | 0.669 |
+
+Occlusion does NOT degrade performance — the trajectory scorer is even slightly more robust under occlusion (0.890 vs 0.879). The 3-object scenario maintains conditional binding but with lower trajectory scorer accuracy (0.669), reflecting the increased difficulty of trajectory matching with more assignment permutations (6 vs 2).
+
 ---
 
 ## 5. Results Summary
