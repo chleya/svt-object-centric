@@ -433,11 +433,31 @@ The remaining performance variation across models (0.857-0.945) is entirely due 
 
 ## 7. Limitations
 
-1. **Toy environment**: 2D arena with 2 objects and low-dimensional features. We do not claim these findings automatically generalize to complex visual environments.
-2. **Rule-based ObjectFile**: The ObjectFile is a minimal structural probe, not a complete learned model. Its conflict resolution demonstrates structural bias, not learned intelligence.
-3. **Low absolute numbers**: ConflictFirst's swap-only = 0.519 is barely above chance. The contribution is the diagnostic chain, not competitive performance.
-4. **Artificial conflict**: Feature-trajectory conflict is a diagnostic probe, not a realistic scenario. However, the structural deficiency it reveals (no error-recovery mechanism) would manifest whenever features are unreliable.
-5. **Trajectory predictor bottleneck**: The trajectory predictor's poor OOD generalization limits any gate's performance ceiling.
+1. **Toy environment**: 2D arena with 2-3 objects and low-dimensional features. We do not claim these findings automatically generalize to complex visual environments with high-dimensional features and many objects.
+
+2. **Trajectory scorer bottleneck**: The trajectory scorer's accuracy (67-92% depending on scenario) limits the combined model's ceiling. Oracle analysis (v18g) shows that with a perfect trajectory scorer, conditional binding would reach 100%. The remaining gap is entirely due to trajectory encoding quality.
+
+3. **Failure modes under proximity**: Failure mode analysis (v18h) reveals that trajectory scorer accuracy degrades significantly when objects are close together (min distance < 20: 58% accuracy vs > 20: 90% accuracy) or have similar velocities (r = -0.30). This suggests that trajectory disentangling under close interaction remains an open challenge.
+
+4. **Artificial conflict**: Feature-trajectory conflict is a diagnostic probe, not a realistic scenario. However, the structural deficiency it reveals (no error-recovery mechanism) would manifest whenever features are unreliable (occlusion, lighting changes, adversarial perturbation).
+
+5. **Multi-seed variability**: While conditional binding holds across all seeds, the absolute accuracy varies (0.77 ± 0.06 for DualPathwayObjectFile). This suggests that training dynamics are sensitive to initialization, and more stable training procedures would be beneficial.
+
+6. **Scalability to many objects**: The 3-object scenario shows reduced trajectory scorer accuracy (0.67 vs 0.88 for 2 objects), reflecting the combinatorial increase in assignment permutations. Scaling to 5+ objects may require more sophisticated assignment mechanisms.
+
+## 7.1 Future Work
+
+1. **Better trajectory encoders**: The oracle analysis shows 100% ceiling with perfect trajectory scoring. Physics-informed trajectory encoders (e.g., Hamiltonian neural networks, neural ODEs) could improve trajectory prediction under OOD conditions.
+
+2. **Proximity-aware trajectory scoring**: The failure mode analysis identifies object proximity as the strongest predictor of failure (r = 0.44). Attention-based trajectory encoders that explicitly model inter-object interactions could address this.
+
+3. **Learned agreement detection**: The current agreement-based switch uses a fixed temperature. A learned conflict detector (trained on both clean and conflict data) could provide more nuanced switching, especially in ambiguous cases.
+
+4. **Extension to visual environments**: Applying the dual-pathway principle to pixel-based object-centric models (e.g., MONet, IODINE) would test whether the principle generalizes beyond low-dimensional features.
+
+5. **Temporal conflict detection**: In realistic scenarios, features may be reliable in some timesteps but not others. Extending the agreement-based switch to operate at the timestep level (rather than episode level) would enable more fine-grained conditional binding.
+
+6. **Integration with causal discovery**: The dual-pathway principle naturally connects to causal structure learning: the agreement between feature and trajectory pathways provides evidence about the causal structure of identity. Formalizing this connection could lead to more principled conflict resolution.
 
 ---
 
