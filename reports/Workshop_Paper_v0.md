@@ -293,6 +293,16 @@ Conditional binding holds across all seeds with standard deviation < 0.06. The f
 
 Occlusion does NOT degrade performance — the trajectory scorer is even slightly more robust under occlusion (0.890 vs 0.879). The 3-object scenario maintains conditional binding but with lower trajectory scorer accuracy (0.669), reflecting the increased difficulty of trajectory matching with more assignment permutations (6 vs 2).
 
+11. **Proximity-enhanced scoring addresses the main failure mode (v19)**: Failure mode analysis (v18h) identified object proximity as the strongest predictor of trajectory scorer failure (r = 0.44). Adding proximity information at the scoring level (not the encoding level) dramatically improves close-range accuracy:
+
+| Min Distance | Baseline | Prox-Enhanced | Improvement |
+|-------------|----------|---------------|-------------|
+| < 10 | 33% | 82% | +49% |
+| 10-20 | 58% | 95% | +37% |
+| > 20 | 90% | 100% | +10% |
+
+Critically, adding interaction information at the encoding level (complex interaction-aware trajectory encoder) causes feature-hijack — the trajectory scorer drops to 1.1% accuracy. This reveals a fundamental design principle: **keep the trajectory encoder simple (GRU), but add interaction information at the scoring level**. The proximity-enhanced scoring also improves published models when retrofitted (SlotAttn: 0.879→0.901, RIMs: 0.912→0.934).
+
 ---
 
 ## 5. Results Summary
