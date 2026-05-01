@@ -24,9 +24,11 @@ import numpy as np
 
 
 class TrajectoryIdentityHead(nn.Module):
-    def __init__(self, dim=2, slot_dim=64, hidden_dim=128, t_obs=10, num_objects=2):
+    def __init__(self, dim=2, slot_dim=64, hidden_dim=128, t_obs=10, num_objects=2,
+                 use_proximity=True):
         super().__init__()
         self.num_objects = num_objects
+        self.use_proximity = use_proximity
         self.obs_traj_encoder = nn.GRU(input_size=dim, hidden_size=slot_dim,
                                         num_layers=2, batch_first=True)
         self.fut_traj_encoder = nn.GRU(input_size=dim, hidden_size=slot_dim,
@@ -35,6 +37,27 @@ class TrajectoryIdentityHead(nn.Module):
             nn.Linear(slot_dim * 2, hidden_dim), nn.ReLU(),
             nn.Linear(hidden_dim, hidden_dim // 2), nn.ReLU(),
             nn.Linear(hidden_dim // 2, 1))
+        if use_proximity:
+            self.prox_scorer = nn.Sequential(
+                nn.Linear(slot_dim * 2 + 1, hidden_dim), nn.ReLU(),
+                nn.Linear(hidden_dim, hidden_dim // 2), nn.ReLU(),
+                nn.Linear(hidden_dim // 2, 1))
+            self.prox_gate = nn.Sequential(
+                nn.Linear(1, hidden_dim // 4), nn.ReLU(),
+                nn.Linear(hidden_dim // 4, 1), nn.Sigmoid())
+
+    def _compute_min_distances(self, positions):
+        B = positions.shape[0]
+        N = positions.shape[2]
+        min_dists = torch.full((B, N), 1e6, device=positions.device)
+        for j in range(N):
+            for k in range(N):
+                if j == k:
+                    continue
+                dist = torch.sqrt(
+                    ((positions[:, :, j, :] - positions[:, :, k, :]) ** 2).sum(dim=-1) + 1e-8)
+                min_dists[:, j] = torch.min(min_dists[:, j], dist.min(dim=1)[0])
+        return min_dists
 
     def forward(self, observed_positions, future_positions):
         if isinstance(observed_positions, np.ndarray):
@@ -54,10 +77,23 @@ class TrajectoryIdentityHead(nn.Module):
         z_fut = torch.stack(z_fut_list, dim=1)
 
         scores = torch.zeros(B, N, N, device=z_obs.device)
+        obs_dists = self._compute_min_distances(observed_positions) if self.use_proximity else None
+        fut_dists = self._compute_min_distances(future_positions) if self.use_proximity else None
+
         for i in range(N):
             for j in range(N):
                 pair = torch.cat([z_fut[:, i, :], z_obs[:, j, :]], dim=-1)
-                scores[:, i, j] = self.scorer(pair).squeeze(-1)
+                base_score = self.scorer(pair).squeeze(-1)
+
+                if self.use_proximity and obs_dists is not None and fut_dists is not None:
+                    avg_dist = (obs_dists[:, j] + fut_dists[:, i]) / 2.0
+                    norm_dist = avg_dist.unsqueeze(-1) / 64.0
+                    prox_pair = torch.cat([pair, norm_dist], dim=-1)
+                    enhanced_score = self.prox_scorer(prox_pair).squeeze(-1)
+                    gate = self.prox_gate(norm_dist).squeeze(-1)
+                    scores[:, i, j] = gate * enhanced_score + (1 - gate) * base_score
+                else:
+                    scores[:, i, j] = base_score
         return scores
 
 
@@ -65,7 +101,7 @@ class DualPathwayWrapper(nn.Module):
     def __init__(self, base_model, dim=2, slot_dim=64, hidden_dim=128,
                  t_obs=10, num_objects=2, conflict_switch_temp=0.1,
                  identity_weight=1.0, traj_identity_weight=1.0,
-                 traj_weight=0.1):
+                 traj_weight=0.1, use_proximity=True):
         super().__init__()
         self.base_model = base_model
         self.num_objects = num_objects
@@ -77,7 +113,8 @@ class DualPathwayWrapper(nn.Module):
         self.traj_weight = traj_weight
 
         self.traj_identity_head = TrajectoryIdentityHead(
-            dim, slot_dim, hidden_dim, t_obs, num_objects)
+            dim, slot_dim, hidden_dim, t_obs, num_objects,
+            use_proximity=use_proximity)
 
     def _get_feature_scores(self, observed_positions, observed_features,
                             future_positions, future_features):
